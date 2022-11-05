@@ -5,10 +5,12 @@ import { MyOrders, OrderBook, PlaceTheOrder } from "./ui";
 /** Грид с панелями */
 export const OrderDesk: FC = () => {
   return (
+    <main>
       <section className={orderDeskGridClassName} data-testid="OrderDesk.Grid">
         <PlaceTheOrder />
         <OrderBook />
         <MyOrders />
       </section>
+    </main>
   );
 };

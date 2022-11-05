@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Button, Logo } from "src/shared";
-import { ConnectWallet } from "./constants";
+import { CONNECT_WALLET } from "./constants";
 
 /** Хедер страницы с лого и кнопкой подключения кошелька  */
 export const Header: FC = () => {
@@ -10,7 +10,7 @@ export const Header: FC = () => {
       <Link to="/" className="mr-auto ml-[50vw] translate-x-[-50%]">
         <Logo />
       </Link>
-      <Button active>{ConnectWallet}</Button>
+      <Button active>{CONNECT_WALLET}</Button>
     </header>
   );
 };
