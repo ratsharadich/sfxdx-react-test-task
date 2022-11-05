@@ -3,13 +3,13 @@ export const footerClassName = [
   "grid-cols-1fr.max.1fr",
   "justify-between",
   "items-start",
-  "bg-footer-bg",
+  "bg-footer",
   "pt-3.25",
   "pb-2.5",
   "px-4.5",
   "font-gilroy",
   "font-medium",
-  "text-footer-text",
+  "text-gray",
   "leading-none",
 ].join(" ");
 

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { gridTileClassName } from "./constants";
+import { gridTileClassName } from "../../constants";
 
 /** Обёртка плитки grid'a */
 export const GridTile: FC<{

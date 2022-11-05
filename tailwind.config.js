@@ -5,9 +5,13 @@ module.exports = {
     extend: {
       fontFamily: {
         gilroy: "Gilroy",
+        manrope: "Manrope",
       },
       padding: {
-        0.5: '0.5rem',
+        0.5: "0.5rem",
+        1.5: "1.5rem",
+        2: "2rem",
+        2.25: "2.25rem",
         2.5: "2.5rem",
         2.75: "2.75rem",
         4.5: "4.5rem",
@@ -18,17 +22,16 @@ module.exports = {
         "1fr.max.1fr": "1fr max-content 1fr",
       },
       gridTemplateRows: {
-        "1.2fr.1fr": "1.2fr 1fr",
-        content: "minmax(0,6.25rem) auto minmax(0,13.75rem)",
+        content: "max-content auto max-content",
       },
       gap: {
         1.25: "1.25rem",
-        1: '1rem',
+        1: "1rem",
         2: "2rem",
       },
       colors: {
-        "footer-bg": "rgb(240, 245, 245)",
-        "footer-text": "rgb(103, 103, 103)",
+        footer: "rgb(240, 245, 245)",
+        gray: "rgb(103, 103, 103)",
       },
     },
   },
