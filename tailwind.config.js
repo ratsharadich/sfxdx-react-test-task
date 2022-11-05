@@ -4,17 +4,18 @@ module.exports = {
   theme: {
     extend: {
       padding: {
-        2.75: '2.75rem',
-        4.5: '4.5rem',
+        2.75: "2.75rem",
+        4.5: "4.5rem",
       },
       gridTemplateColumns: {
-        "order-desk": "minmax(60.75rem, 3fr) minmax(19.75rem, 1fr)",
+        "3fr.1fr": "3fr 1fr",
       },
       gridTemplateRows: {
-        "order-desk": "minmax(32rem, 1.2fr) minmax(20.75rem, 1fr)",
+        "1.2fr.1fr": "1.2fr 1fr",
+        "content": 'minmax(0,6.25rem) auto minmax(0,13.75rem)',
       },
       gap: {
-        1.25: '1.25rem',
+        1.25: "1.25rem",
       },
     },
   },

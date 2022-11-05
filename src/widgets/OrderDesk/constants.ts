@@ -1,7 +1,7 @@
 export const orderDeskGridClassName = [
   "grid",
-  "grid-cols-order-desk",
-  "grid-rows-order-desk",
+  "grid-cols-3fr.1fr",
+  "grid-rows-1.2fr.1fr",
   "gap-1.25",
   "w-full",
   "h-full",
