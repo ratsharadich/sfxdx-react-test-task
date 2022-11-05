@@ -1,6 +1,11 @@
 import { FC } from "react";
+import { GridTile } from "./GridTile";
 
 /** Раздел размещения заявки */
 export const PlaceTheOrder: FC = () => {
-  return <article className="w-full h-full bg-white rounded-2xl"></article>;
+  return (
+    <GridTile dataTestId="PlaceTheOrder">
+      <></>
+    </GridTile>
+  );
 };
