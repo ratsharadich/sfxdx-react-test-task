@@ -8,7 +8,11 @@ export const Orders: FC = () => {
     <>
       <div className="grid grid-rows-content w-screen h-screen absolute z-10">
         <Header />
-        <OrderDesk />
+
+        <main>
+          <OrderDesk />
+        </main>
+
         <Footer />
       </div>
 

@@ -6,7 +6,7 @@ import { RESERVED_RIGHTS } from "../../constants";
 /** Блок футера с лого и @ all rights reserved */
 export const Rights: FC = () => {
   return (
-    <section className="flex flex-col h-full justify-between items-center pt-2">
+    <section className="flex flex-col h-full justify-between items-center pt-0.5">
       <Link to="/">
         <Logo />
       </Link>

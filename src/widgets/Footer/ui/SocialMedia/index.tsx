@@ -10,7 +10,7 @@ import {
 /** Блок футера с ссылками на социальные сети */
 export const SocialMedia: FC = () => {
   return (
-    <section className="flex gap-8">
+    <section className="flex gap-2 justify-self-end">
       <Link to="/">
         <FacebookIcon />
       </Link>
