@@ -1,7 +1,10 @@
 import { FC } from "react";
 import { BlockTitle } from "src/shared";
-import { PLACE_THE_HOLDER } from "../constants";
+
+import { PLACE_THE_ORDER } from "../constants";
+
 import { GridTile } from "./GridTile";
+import { OrderForm } from "../../../features/OrderForm";
 import { OrderTypeSelector } from "./OrderTypeSelector";
 import { TransactionTypeSelector } from "./TransactionTypeSelector";
 
@@ -10,11 +13,13 @@ export const PlaceTheOrder: FC = () => {
   return (
     <GridTile className="gap-y-[2.5rem]" dataTestId="PlaceTheOrder">
       <div className="flex items-center gap-1.5">
-        <BlockTitle text={PLACE_THE_HOLDER} />
+        <BlockTitle text={PLACE_THE_ORDER} />
         <OrderTypeSelector />
       </div>
 
       <TransactionTypeSelector />
+
+      <OrderForm />
     </GridTile>
   );
 };

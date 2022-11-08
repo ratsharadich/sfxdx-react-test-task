@@ -14,12 +14,12 @@ export const orderDeskGridClassName = [
   "pb-5",
 ].join(" ");
 
-export const PLACE_THE_HOLDER = "Place the Order";
+export const PLACE_THE_ORDER = "Place the Order";
 export const ORDER_BOOK = "Order Book";
 export const MY_ORDERS = "My Orders";
 
-export const LIMIT = 'Limit';
-export const MARKET = 'Market';
+export const LIMIT = "Limit";
+export const MARKET = "Market";
 
-export const BUY = 'Buy';
-export const SELL = 'Sell';
+export const BUY = "Buy";
+export const SELL = "Sell";

@@ -33,6 +33,9 @@ module.exports = {
       },
       colors: {
         'background-gray': "rgb(240, 245, 245)",
+        'border-gray': 'rgb(205, 210, 221)',
+        'placeholder-gray': 'rgb(156,163,175)',
+        'disabled-gray': 'rgb(231, 235, 241)',
         gray: "rgb(103, 103, 103)",
       },
     },

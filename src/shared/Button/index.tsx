@@ -2,15 +2,20 @@ import React, { FC } from "react";
 import { buttonClassName } from "./constants";
 import "./styles.css";
 
-/** Переиспользуемая кнопка */
+/** Стилизованная кнопка */
 export const Button: FC<{
   children?: React.ReactNode;
   active?: Boolean;
   className?: string;
-  onClick?: () => void;
-}> = ({ children, active, className, onClick }) => {
+  submit?: boolean;
+  onClick?: (e: React.MouseEvent) => void;
+}> = ({ children, active, className, submit, onClick }) => {
   return (
-    <button className={buttonClassName(active, className)} onClick={onClick}>
+    <button
+      type={submit ? "submit" : "button"}
+      className={buttonClassName(active, className)}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
