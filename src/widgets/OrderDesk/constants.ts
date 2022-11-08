@@ -17,3 +17,6 @@ export const orderDeskGridClassName = [
 export const PLACE_THE_HOLDER = "Place the Order";
 export const ORDER_BOOK = "Order Book";
 export const MY_ORDERS = "My Orders";
+
+export const LIMIT = 'Limit';
+export const MARKET = 'Market';
