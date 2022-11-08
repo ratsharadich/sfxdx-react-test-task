@@ -8,7 +8,10 @@ export const OrderBook: FC = () => {
   const contentMock = false;
 
   return (
-    <GridTile className="row-span-2" dataTestId="OrderBook">
+    <GridTile
+      className="row-span-2 md:order-2 max-md:order-3"
+      dataTestId="OrderBook"
+    >
       <BlockTitle text={ORDER_BOOK} />
 
       <div>

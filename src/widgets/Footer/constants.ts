@@ -1,6 +1,8 @@
 export const footerClassName = [
   "grid",
-  "grid-cols-1fr.max.1fr",
+  "md:grid-cols-1fr.max.1fr",
+  "max-md:grid-cols-1",
+  "max-md:gap-y-[2rem]",
   "justify-between",
   "items-start",
   "bg-background-gray",
@@ -16,5 +18,3 @@ export const footerClassName = [
 export const PRIVACY_POLICY = "Privacy Policy";
 export const TERMS_AND_CONDITIONS = "Terms & Conditions";
 export const COOKIE_POLICY = "Cookie Policy";
-
-export const RESERVED_RIGHTS = "©2022 All rights reserved. Powered by Atla";

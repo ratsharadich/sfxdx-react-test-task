@@ -9,7 +9,10 @@ export const MyOrders: FC = () => {
   const contentMock = false;
 
   return (
-    <GridTile dataTestId="MyOrders" className="min-h-[20.5rem]">
+    <GridTile
+      className="min-h-[20.5rem] md:order-3 max-md:order-2"
+      dataTestId="MyOrders"
+    >
       <BlockTitle text={MY_ORDERS} />
 
       <div className="flex w-full h-full items-center justify-center">

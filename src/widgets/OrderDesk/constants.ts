@@ -5,13 +5,15 @@ export const gridTileClassName = (className?: string) =>
 
 export const orderDeskGridClassName = [
   "grid",
-  "grid-cols-3fr.1fr",
+  "justify-center",
+  "md:grid-cols-3fr.1fr",
   "gap-1.25",
   "w-full",
   "h-full",
   "px-4.5",
   "pt-2.75",
   "pb-5",
+  "max-md:grid-cols-[21rem]",
 ].join(" ");
 
 export const PLACE_THE_ORDER = "Place the Order";

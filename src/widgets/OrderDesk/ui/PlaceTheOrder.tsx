@@ -12,7 +12,7 @@ import { TransactionTypeSelector } from "./TransactionTypeSelector";
 export const PlaceTheOrder: FC = () => {
   return (
     <GridTile className="gap-y-[2.5rem]" dataTestId="PlaceTheOrder">
-      <div className="flex items-center gap-1.5">
+      <div className="flex flex-wrap items-center gap-1.5">
         <BlockTitle text={PLACE_THE_ORDER} />
         <OrderTypeSelector />
       </div>

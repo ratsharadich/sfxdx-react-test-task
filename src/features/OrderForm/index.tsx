@@ -37,7 +37,7 @@ export const OrderForm: FC = () => {
       className="flex flex-col gap-y-[2.5rem]"
       onInput={handleFormInput}
     >
-      <div className="grid grid-cols-[5fr_3fr] gap-x-[1.25rem] gap-y-2">
+      <div className="grid md:grid-cols-[5fr_3fr] max-md:grid-cols-1 gap-x-[1.25rem] gap-y-2">
         <InputsBlock onChange={handleChangeSubmitButtonActive} />
 
         <Output innerRef={outputRef} />

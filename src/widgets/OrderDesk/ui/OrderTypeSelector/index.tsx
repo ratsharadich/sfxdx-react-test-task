@@ -12,8 +12,6 @@ export const OrderTypeSelector: FC = () => {
   const handleLimitButtonClick = useCallback(() => selectType(LIMIT), []);
   const handleMarketButtonClick = useCallback(() => selectType(MARKET), []);
 
-  console.log(type, "button");
-
   return (
     <div className="flex gap-1.5 font-inter font-bold text-gray">
       <button className={limitClassName(type)} onClick={handleLimitButtonClick}>

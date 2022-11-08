@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { ReservedRights } from "src/shared";
 import { footerClassName } from "./constants";
 import { Policies, Rights, SocialMedia } from "./ui";
 
@@ -9,6 +10,8 @@ export const Footer: FC = () => {
       <Policies />
       <Rights />
       <SocialMedia />
+
+      <ReservedRights className="md:hidden order-4 justify-self-center" />
     </footer>
   );
 };
