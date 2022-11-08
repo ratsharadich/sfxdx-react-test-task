@@ -6,12 +6,12 @@ const commonButtonClassName =
   "flex items-center justify-center cursor-pointer h-[2.25rem] w-[4.5rem]";
 const selectedButtonClassName = "border-b-2 border-[#08D899] text-black";
 
-export const limitClassName = (button: ButtonType) =>
+export const limitClassName = (type: ButtonType) =>
   cn(commonButtonClassName, {
-    [selectedButtonClassName]: button === LIMIT,
+    [selectedButtonClassName]: type === LIMIT,
   });
 
-export const marketClassName = (button: ButtonType) =>
+export const marketClassName = (type: ButtonType) =>
   cn(commonButtonClassName, {
-    [selectedButtonClassName]: button === MARKET,
+    [selectedButtonClassName]: type === MARKET,
   });

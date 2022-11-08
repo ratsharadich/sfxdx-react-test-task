@@ -32,7 +32,7 @@ module.exports = {
         2: "2rem",
       },
       colors: {
-        footer: "rgb(240, 245, 245)",
+        'background-gray': "rgb(240, 245, 245)",
         gray: "rgb(103, 103, 103)",
       },
     },

@@ -20,3 +20,6 @@ export const MY_ORDERS = "My Orders";
 
 export const LIMIT = 'Limit';
 export const MARKET = 'Market';
+
+export const BUY = 'Buy';
+export const SELL = 'Sell';

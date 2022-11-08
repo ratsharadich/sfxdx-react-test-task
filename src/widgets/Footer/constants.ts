@@ -3,7 +3,7 @@ export const footerClassName = [
   "grid-cols-1fr.max.1fr",
   "justify-between",
   "items-start",
-  "bg-footer",
+  "bg-background-gray",
   "pt-3.25",
   "pb-2.5",
   "px-4.5",
