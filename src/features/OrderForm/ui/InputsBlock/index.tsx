@@ -9,18 +9,8 @@ import {
 
 /** Блок инпутов формы размещения orders */
 export const InputsBlock: FC<{
-  tokenAInputRef: React.Ref<HTMLInputElement>;
-  tokenAAmountInputRef: React.Ref<HTMLInputElement>;
-  tokenBInputRef: React.Ref<HTMLInputElement>;
-  tokenBLimitPriceInputRef: React.Ref<HTMLInputElement>;
   onChange: (status: boolean) => void;
-}> = ({
-  tokenAInputRef,
-  tokenAAmountInputRef,
-  tokenBInputRef,
-  tokenBLimitPriceInputRef,
-  onChange,
-}) => {
+}> = ({ onChange }) => {
   const [tokenAValue, setTokenAValue] = useState<string>("");
   const handleChangeTokenA = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -78,26 +68,22 @@ export const InputsBlock: FC<{
     <>
       <Input
         placeholder={TOKEN_A}
-        ref={tokenAInputRef}
         value={tokenAValue}
         onChange={handleChangeTokenA}
       />
       <Input
         placeholder={TOKEN_A_AMOUNT}
-        ref={tokenAAmountInputRef}
         value={tokenAAmountValue}
         onChange={handleChangeTokenAAmount}
       />
 
       <Input
         placeholder={TOKEN_B}
-        ref={tokenBInputRef}
         value={tokenBValue}
         onChange={handleChangeTokenB}
       />
       <Input
         placeholder={TOKEN_B_LIMIT_PRICE}
-        ref={tokenBLimitPriceInputRef}
         value={tokenBLimitPriceValue}
         onChange={handleChangeTokenBLimitPrice}
       />
