@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { BlockTitle } from "src/shared";
 import { GridTile } from "./GridTile";
-import { MY_ORDERS } from "../constants";
+import { MY_ORDERS, MY_ORDERS_DUMMY } from "../constants";
 
 /** Размел просмотра "моих" заявок */
 export const MyOrders: FC = () => {
@@ -20,7 +20,7 @@ export const MyOrders: FC = () => {
           <></>
         ) : (
           <span className="font-manrope font-bold text-gray text-2xl">
-            Connect your wallet to start trading
+            {MY_ORDERS_DUMMY}
           </span>
         )}
       </div>

@@ -1,11 +1,7 @@
 import { FC, useCallback, useState } from "react";
 import { Button } from "src/shared";
 
-import {
-  buyButtonClassName,
-  commonButtonClassName,
-  sellButtonClassName,
-} from "./constants";
+import { buyButtonClassName, sellButtonClassName } from "./constants";
 import { ButtonType } from "./interfaces";
 
 import { BUY, SELL } from "../../constants";
@@ -25,6 +21,7 @@ export const TransactionTypeSelector: FC = () => {
       >
         {BUY}
       </Button>
+
       <Button
         className={sellButtonClassName(type)}
         onClick={handleSellButtonClick}

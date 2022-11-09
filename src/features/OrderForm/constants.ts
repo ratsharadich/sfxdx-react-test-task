@@ -6,8 +6,6 @@ export const outputClassName = [
   "w-[17.5rem]",
   "h-[2.75rem]",
   "bg-background-gray",
-  "border",
-  "border-border-gray",
   "rounded-[0.5rem]",
   "text-placeholder-gray",
 ].join(" ");

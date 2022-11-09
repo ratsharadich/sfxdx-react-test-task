@@ -34,7 +34,7 @@ export const OrderForm: FC = () => {
       name="orderForm"
       action={getOrders}
       method="GET"
-      className="flex flex-col gap-y-[2.5rem]"
+      className="flex flex-col gap-y-[2.5rem] z-10"
       onInput={handleFormInput}
     >
       <div className="grid md:grid-cols-[5fr_3fr] max-md:grid-cols-1 gap-x-[1.25rem] gap-y-2">

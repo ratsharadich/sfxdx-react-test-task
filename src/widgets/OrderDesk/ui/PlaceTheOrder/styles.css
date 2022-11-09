@@ -1,0 +1,7 @@
+@media (min-width: 768px) {
+  .svg-pattern {
+    background-image: url("svg/background.svg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+}

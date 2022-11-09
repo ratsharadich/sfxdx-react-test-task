@@ -8,4 +8,4 @@ export * from "./ReservedRights";
 export * from "./Input";
 export * from "./Input/constants";
 
-export * from "./api";
+export * from "./lib/api";
