@@ -1,3 +1,3 @@
-export * from "./Policies";
-export * from "./Rights";
-export * from "./SocialMedia";
+export * from './Policies'
+export * from './Rights'
+export * from './SocialMedia'

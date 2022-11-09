@@ -1,6 +1,5 @@
-export * from "./Logo";
-
-export * from "./FacebookIcon";
-export * from "./InstagramIcon";
-export * from "./TwitterIcon";
-export * from "./YouTubeIcon";
+export * from './FacebookIcon'
+export * from './InstagramIcon'
+export * from './Logo'
+export * from './TwitterIcon'
+export * from './YouTubeIcon'

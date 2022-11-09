@@ -1,3 +1,3 @@
-import { LIMIT, MARKET } from "../../constants";
+import { LIMIT, MARKET } from '../../constants'
 
-export type ButtonType = typeof LIMIT | typeof MARKET;
+export type ButtonType = typeof LIMIT | typeof MARKET

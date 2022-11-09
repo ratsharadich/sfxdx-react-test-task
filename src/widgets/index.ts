@@ -1,3 +1,3 @@
-export * from "./Header";
-export * from "./OrderDesk";
-export * from "./Footer";
+export * from './Footer'
+export * from './Header'
+export * from './OrderDesk'

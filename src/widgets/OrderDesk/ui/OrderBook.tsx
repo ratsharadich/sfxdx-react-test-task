@@ -1,11 +1,12 @@
-import { FC } from "react";
-import { BlockTitle } from "src/shared";
-import { GridTile } from "./GridTile";
-import { ORDER_BOOK } from "../constants";
+import { FC } from 'react'
+import { BlockTitle } from 'src/shared'
+
+import { ORDER_BOOK } from '../constants'
+import { GridTile } from './GridTile'
 
 /** Раздел зарегистрированных ордеров в виде биржевого стакана  */
 export const OrderBook: FC = () => {
-  const contentMock = false;
+  const contentMock = false
 
   return (
     <GridTile
@@ -15,15 +16,17 @@ export const OrderBook: FC = () => {
       <BlockTitle text={ORDER_BOOK} />
 
       <div>
-        {contentMock ? (
+        {contentMock
+          ? (
           <></>
-        ) : (
+            )
+          : (
           <pre className="font-manrope text-gray text-xl pt-2.5">
             {`Choose tokens
 to see prices`}
           </pre>
-        )}
+            )}
       </div>
     </GridTile>
-  );
-};
+  )
+}

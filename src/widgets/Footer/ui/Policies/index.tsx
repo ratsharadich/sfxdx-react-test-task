@@ -1,10 +1,11 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import { FC } from 'react'
+import { Link } from 'react-router-dom'
+
 import {
   COOKIE_POLICY,
   PRIVACY_POLICY,
-  TERMS_AND_CONDITIONS,
-} from "../../constants";
+  TERMS_AND_CONDITIONS
+} from '../../constants'
 
 /** Блок футера с ссылками на политики */
 export const Policies: FC = () => {
@@ -14,5 +15,5 @@ export const Policies: FC = () => {
       <Link to="/">{TERMS_AND_CONDITIONS}</Link>
       <Link to="/">{COOKIE_POLICY}</Link>
     </section>
-  );
-};
+  )
+}

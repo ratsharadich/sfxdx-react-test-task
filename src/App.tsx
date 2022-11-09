@@ -1,12 +1,13 @@
-import { Orders } from "./pages";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom'
 
-function App() {
+import { Orders } from './pages'
+
+function App () {
   return (
     <BrowserRouter>
-        <Orders />
+      <Orders />
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

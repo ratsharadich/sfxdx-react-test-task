@@ -1,11 +1,11 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import { FC } from 'react'
+import { Link } from 'react-router-dom'
 import {
   FacebookIcon,
   InstagramIcon,
   TwitterIcon,
-  YouTubeIcon,
-} from "src/shared";
+  YouTubeIcon
+} from 'src/shared'
 
 /** Блок футера с ссылками на социальные сети */
 export const SocialMedia: FC = () => {
@@ -27,5 +27,5 @@ export const SocialMedia: FC = () => {
         <InstagramIcon />
       </Link>
     </section>
-  );
-};
+  )
+}

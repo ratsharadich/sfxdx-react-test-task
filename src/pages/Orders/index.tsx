@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { Footer, Header, OrderDesk } from "src/widgets";
-import { Background } from "src/shared";
+import { FC } from 'react'
+import { Background } from 'src/shared'
+import { Footer, Header, OrderDesk } from 'src/widgets'
 
 /** Страница совершения сделок */
 export const Orders: FC = () => {
@@ -18,5 +18,5 @@ export const Orders: FC = () => {
 
       <Background />
     </>
-  );
-};
+  )
+}

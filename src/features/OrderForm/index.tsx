@@ -1,33 +1,33 @@
-import React, { FC, useCallback, useRef, useState } from "react";
+import React, { FC, useCallback, useRef, useState } from 'react'
+import { getOrders } from 'src/shared'
 
-import { getOrders } from "src/shared";
-import { InputsBlock, Output, SubmitButton } from "./ui";
+import { InputsBlock, Output, SubmitButton } from './ui'
 
 /** Форма заполнения для публикации order */
 export const OrderForm: FC = () => {
   const [isSubmitButtonActive, setSubmitButtonActive] =
-    useState<boolean>(false);
+    useState<boolean>(false)
 
   const handleChangeSubmitButtonActive = useCallback((status: boolean) => {
-    setSubmitButtonActive(status);
-  }, []);
+    setSubmitButtonActive(status)
+  }, [])
 
-  const outputRef = useRef<HTMLOutputElement>(null);
+  const outputRef = useRef<HTMLOutputElement>(null)
 
   const handleFormInput = useCallback(() => {
-    if (outputRef.current) {
-      console.log(outputRef.current);
-      outputRef.current.value = "123";
+    if (outputRef.current != null) {
+      console.log(outputRef.current)
+      outputRef.current.value = '123'
     }
-  }, []);
+  }, [])
 
   const handleFormSubmit = useCallback((e: React.MouseEvent) => {
-    e.preventDefault();
-    if (outputRef.current) {
-      console.log(outputRef.current);
-      outputRef.current.value = "123";
+    e.preventDefault()
+    if (outputRef.current != null) {
+      console.log(outputRef.current)
+      outputRef.current.value = '123'
     }
-  }, []);
+  }, [])
 
   return (
     <form
@@ -45,5 +45,5 @@ export const OrderForm: FC = () => {
 
       <SubmitButton onClick={handleFormSubmit} active={isSubmitButtonActive} />
     </form>
-  );
-};
+  )
+}

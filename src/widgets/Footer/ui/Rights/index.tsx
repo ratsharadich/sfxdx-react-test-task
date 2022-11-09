@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
-import { Logo, ReservedRights } from "src/shared";
+import { FC } from 'react'
+import { Link } from 'react-router-dom'
+import { Logo, ReservedRights } from 'src/shared'
 
 /** Блок футера с лого и @ all rights reserved */
 export const Rights: FC = () => {
@@ -12,5 +12,5 @@ export const Rights: FC = () => {
 
       <ReservedRights className="md:inline-block max-md:hidden" />
     </section>
-  );
-};
+  )
+}

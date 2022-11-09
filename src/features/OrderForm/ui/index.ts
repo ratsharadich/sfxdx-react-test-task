@@ -1,3 +1,3 @@
-export * from "./Output";
-export * from "./SubmitButton";
-export * from "./InputsBlock";
+export * from './InputsBlock'
+export * from './Output'
+export * from './SubmitButton'

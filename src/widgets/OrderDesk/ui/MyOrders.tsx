@@ -1,12 +1,13 @@
-import { FC } from "react";
-import { BlockTitle } from "src/shared";
-import { GridTile } from "./GridTile";
-import { MY_ORDERS, MY_ORDERS_DUMMY } from "../constants";
+import { FC } from 'react'
+import { BlockTitle } from 'src/shared'
+
+import { MY_ORDERS, MY_ORDERS_DUMMY } from '../constants'
+import { GridTile } from './GridTile'
 
 /** Размел просмотра "моих" заявок */
 export const MyOrders: FC = () => {
   /** TODO: Прикрутить данные  */
-  const contentMock = false;
+  const contentMock = false
 
   return (
     <GridTile
@@ -16,14 +17,16 @@ export const MyOrders: FC = () => {
       <BlockTitle text={MY_ORDERS} />
 
       <div className="flex w-full h-full items-center justify-center">
-        {contentMock ? (
+        {contentMock
+          ? (
           <></>
-        ) : (
+            )
+          : (
           <span className="font-manrope font-bold text-gray text-2xl">
             {MY_ORDERS_DUMMY}
           </span>
-        )}
+            )}
       </div>
     </GridTile>
-  );
-};
+  )
+}

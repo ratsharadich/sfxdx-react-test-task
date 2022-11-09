@@ -1,8 +1,9 @@
-import React, { FC } from "react";
-import { ElipsesClassNames } from "./constants";
+import React, { FC } from 'react'
+
+import { ElipsesClassNames } from './constants'
 
 export const Background: FC = () => {
-  const { leftTop, leftBottom, rightTop, rightBottom } = ElipsesClassNames;
+  const { leftTop, leftBottom, rightTop, rightBottom } = ElipsesClassNames
   return (
     <div className="h-full w-full overflow-hidden z-0" data-testid="Background">
       <div className={leftTop} data-testid="Background.LeftTopEllips" />
@@ -10,5 +11,5 @@ export const Background: FC = () => {
       <div className={rightTop} data-testid="Background.RightTopEllips" />
       <div className={rightBottom} data-testid="Background.RightBottomEllips" />
     </div>
-  );
-};
+  )
+}

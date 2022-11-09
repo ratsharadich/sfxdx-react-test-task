@@ -1,16 +1,15 @@
-import { FC, useCallback, useState } from "react";
+import { FC, useCallback, useState } from 'react'
 
-import { limitClassName, marketClassName } from "./constants";
-import { ButtonType } from "./interfaces";
-
-import { LIMIT, MARKET } from "../../constants";
+import { LIMIT, MARKET } from '../../constants'
+import { limitClassName, marketClassName } from './constants'
+import { ButtonType } from './interfaces'
 
 /** Переключатель между limit и market */
 export const OrderTypeSelector: FC = () => {
-  const [type, selectType] = useState<ButtonType>(LIMIT);
+  const [type, selectType] = useState<ButtonType>(LIMIT)
 
-  const handleLimitButtonClick = useCallback(() => selectType(LIMIT), []);
-  const handleMarketButtonClick = useCallback(() => selectType(MARKET), []);
+  const handleLimitButtonClick = useCallback(() => selectType(LIMIT), [])
+  const handleMarketButtonClick = useCallback(() => selectType(MARKET), [])
 
   return (
     <div className="flex gap-1.5 font-inter font-bold text-gray">
@@ -25,5 +24,5 @@ export const OrderTypeSelector: FC = () => {
         {MARKET}
       </button>
     </div>
-  );
-};
+  )
+}
