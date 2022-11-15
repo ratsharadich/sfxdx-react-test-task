@@ -1,3 +1,5 @@
+import './entities';
+
 import { BrowserRouter } from 'react-router-dom'
 
 import { Orders } from './pages'

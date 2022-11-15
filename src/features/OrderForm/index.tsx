@@ -1,3 +1,4 @@
+import { AxiosResponse } from 'axios'
 import React, { FC, useCallback, useRef, useState } from 'react'
 import { getOrders } from 'src/shared'
 
@@ -21,19 +22,18 @@ export const OrderForm: FC = () => {
     }
   }, [])
 
-  const handleFormSubmit = useCallback((e: React.MouseEvent) => {
-    e.preventDefault()
-    if (outputRef.current != null) {
-      console.log(outputRef.current)
-      outputRef.current.value = '123'
-    }
+  const [orders, setOrders] = useState<AxiosResponse<any, any>>();
+  const handleFormSubmit = useCallback(async (e: React.MouseEvent) => {
+    e.preventDefault();
+    const { data } = await getOrders;
+    setOrders(data);
   }, [])
+
+  console.log(orders, 'orders');
 
   return (
     <form
       name="orderForm"
-      action={getOrders}
-      method="GET"
       className="flex flex-col gap-y-[2.5rem] z-10"
       onInput={handleFormInput}
     >

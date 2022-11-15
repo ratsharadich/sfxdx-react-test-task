@@ -9,7 +9,7 @@ export const SubmitButton: FC<{
   onClick: (e: React.MouseEvent) => void
 }> = ({ active, onClick }) => {
   return (
-    <Button submit onClick={onClick} active={active}>
+    <Button onClick={onClick} active={active}>
       {PLACE_THE_ORDER_BUTTON}
     </Button>
   )

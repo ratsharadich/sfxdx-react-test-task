@@ -9,12 +9,10 @@ export const Button: FC<{
   children?: React.ReactNode
   active?: Boolean
   className?: string
-  submit?: boolean
   onClick?: (e: React.MouseEvent) => void
-}> = ({ children, active, className, submit, onClick }) => {
+}> = ({ children, active, className, onClick }) => {
   return (
     <button
-      type={submit ? 'submit' : 'button'}
       className={buttonClassName(active, className)}
       onClick={onClick}
     >
