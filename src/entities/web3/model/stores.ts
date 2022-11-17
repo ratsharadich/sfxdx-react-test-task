@@ -1,14 +1,20 @@
-import { createStore } from 'effector';
+import { createStore } from "effector";
 
-import { ACCOUNT_FROM_STORAGE } from '../constants';
+import { ACCOUNT_FROM_STORAGE } from "../constants";
+import { fetchAccountFx } from "./effects";
 
-/** Аккаунты пользователя */
-export const $accounts = createStore<string[] | null>(ACCOUNT_FROM_STORAGE);
+/** Аккаунт пользователя */
+export const $account = createStore<string | null>(ACCOUNT_FROM_STORAGE);
 
 /** Выбранный аккаунт пользователя */
-export const $selectedAccount = $accounts.map((accounts) => accounts?.[0]);
+export const $selectedAccount = $account.map((accounts) => accounts?.[0]);
 
 /** Произведено ли подключения кошельков */
-export const $isLogin = $selectedAccount.map((accounts) => accounts ? accounts.length > 0 : false);
+export const $isLogin = $selectedAccount.map((accounts) =>
+  accounts ? accounts.length > 0 : false
+);
 
-$selectedAccount.watch((account) => console.log('account', account));
+/** Происходит ли исполнение какого-либо запроса на странице */
+export const $isLoading = fetchAccountFx.pending;
+
+$selectedAccount.watch((account) => console.log("account", account));

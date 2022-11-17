@@ -1,0 +1,17 @@
+export const AccountBadgeClassName = [
+  'grid',
+  'grid-cols-[1.5rem,minmax(7.5rem,auto),1rem]',
+  'gap-[0.5rem]',
+  'px-[0.75rem]',
+  'font-manrope',
+  'text-sm',
+  'font-bold',
+  'text-green',
+  'items-center',
+  'justify-center',
+  'h-[2.75rem]',
+  'w-[12.5rem]',
+  'rounded-[1.25rem]',
+  'bg-white',
+  'cursor-pointer',
+].join(' ');

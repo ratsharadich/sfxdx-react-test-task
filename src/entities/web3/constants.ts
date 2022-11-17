@@ -1,1 +1,1 @@
-export const ACCOUNT_FROM_STORAGE: string[] = JSON.parse(localStorage.getItem('accounts') ?? '');
+export const ACCOUNT_FROM_STORAGE = JSON.parse(localStorage.getItem('accounts') ?? ' ') ?? null;

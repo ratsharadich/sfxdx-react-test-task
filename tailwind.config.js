@@ -37,7 +37,8 @@ module.exports = {
         'placeholder-gray': 'rgb(156,163,175)',
         'disabled-bg-gray': 'rgb(231, 235, 241)',
         'disabled-text-gray': 'rgb(148, 150, 151)',
-        gray: 'rgb(103, 103, 103)'
+        gray: 'rgb(103, 103, 103)',
+        green: 'rgb(8, 216, 153)',
       }
     }
   },

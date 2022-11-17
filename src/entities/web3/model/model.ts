@@ -1,12 +1,12 @@
-import { forward } from 'effector';
+import { forward } from "effector";
 
-import { fetchAccountsFx } from './effects';
-import { requestedAccounts } from './events';
-import { $accounts } from './stores'; ;
+import { fetchAccountFx } from "./effects";
+import { requestedAccounts } from "./events";
+import { $account } from "./stores";
 
-$accounts.on(fetchAccountsFx.doneData, (_, accounts) => accounts);
+$account.on(fetchAccountFx.doneData, (_, accounts) => accounts);
 
 forward({
   from: requestedAccounts,
-  to: fetchAccountsFx
+  to: fetchAccountFx,
 });
