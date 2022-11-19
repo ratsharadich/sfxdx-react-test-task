@@ -11,6 +11,7 @@ import {
 import { Input } from "src/shared";
 
 import {
+  AMOUNT_PATTERN,
   TOKEN_A_AMOUNT_ID,
   TOKEN_A_AMOUNT_PLACEHOLDER,
   TOKEN_A_ID,
@@ -19,6 +20,7 @@ import {
   TOKEN_B_LIMIT_PRICE_ID,
   TOKEN_B_LIMIT_PRICE_PLACEHOLDER,
   TOKEN_B_PLACEHOLDER,
+  TOKEN_PATTERN,
 } from "../../constants";
 
 /** Блок инпутов формы размещения orders */
@@ -63,7 +65,7 @@ export const InputsBlock: FC<{
       <Input
         id={TOKEN_A_ID}
         label={TOKEN_A_PLACEHOLDER}
-        pattern="^0x[a-fA-F0-9]{40}$"
+        pattern={TOKEN_PATTERN}
         placeholder={TOKEN_A_PLACEHOLDER}
         value={tokenA}
         onChange={handleChangeTokenA}
@@ -72,7 +74,7 @@ export const InputsBlock: FC<{
       <Input
         id={TOKEN_A_AMOUNT_ID}
         label={TOKEN_A_AMOUNT_PLACEHOLDER}
-        pattern="^(0|[1-9]\d*)(\.\d+)?$"
+        pattern={AMOUNT_PATTERN}
         placeholder={TOKEN_A_AMOUNT_PLACEHOLDER}
         value={tokenAmount}
         onChange={handleChangeTokenAAmount}
@@ -81,7 +83,7 @@ export const InputsBlock: FC<{
 
       <Input
         id={TOKEN_B_ID}
-        pattern="^0x[a-fA-F0-9]{40}$"
+        pattern={TOKEN_PATTERN}
         label={TOKEN_B_PLACEHOLDER}
         placeholder={TOKEN_B_PLACEHOLDER}
         value={tokenB}
@@ -91,7 +93,7 @@ export const InputsBlock: FC<{
       <Input
         id={TOKEN_B_LIMIT_PRICE_ID}
         label={TOKEN_B_LIMIT_PRICE_PLACEHOLDER}
-        pattern="^(0|[1-9]\d*)(\.\d+)?$"
+        pattern={AMOUNT_PATTERN}
         className={cn({ invisible: isMarket })}
         placeholder={TOKEN_B_LIMIT_PRICE_PLACEHOLDER}
         value={priceLimit}

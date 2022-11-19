@@ -24,3 +24,6 @@ export const TOKEN_B_LIMIT_PRICE_ID = "TOKEN_B_LIMIT_PRICE_ID";
 
 export const EXPECTED_ORDER_PRICE = "Expected order price";
 export const PLACE_THE_ORDER_BUTTON = "Place the order";
+
+export const TOKEN_PATTERN = "^0x[a-fA-F0-9]{40}$";
+export const AMOUNT_PATTERN = "^(0|[^0][1-9]*)([.][1-9]+)?$";
