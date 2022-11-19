@@ -19,6 +19,7 @@ module.exports = {
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/no-invalid-void-type': 'warn',
     "@typescript-eslint/no-dynamic-delete": "warn",
+    "@typescript-eslint/member-delimiter-style": "warn",
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
     'space-before-function-paren': 'off',

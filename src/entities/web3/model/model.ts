@@ -2,9 +2,9 @@ import { forward } from "effector";
 
 import { fetchAccountsFx } from "./effects";
 import { requestedAccounts } from "./events";
-import { $accounts } from "./stores";
+import { $account } from "./stores";
 
-$accounts.on(fetchAccountsFx.doneData, (_, accounts) => accounts);
+$account.on(fetchAccountsFx.doneData, (_, accounts) => accounts);
 
 forward({
   from: requestedAccounts,

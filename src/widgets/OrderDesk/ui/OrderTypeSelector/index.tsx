@@ -1,28 +1,26 @@
+import { useEvent, useStore } from "effector-react";
 import { FC } from "react";
-import { useSearchParams } from "react-router-dom";
-import { ORDER_TYPES } from "src/shared";
 
 import { LIMIT, MARKET } from "../../constants";
+import { $isLimit, $isMarket, setLimit, setMarket } from "../../model";
 import { buttonClassName } from "./constants";
 
 /** Переключатель между limit и market */
 export const OrderTypeSelector: FC = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const params = Object.fromEntries([...searchParams]);
+  const isLimit = useStore($isLimit);
+  const isMarket = useStore($isMarket);
 
-  const isLimit = searchParams.get(ORDER_TYPES.LIMIT) === "true";
-  const isMarket = searchParams.get(ORDER_TYPES.MARKET) === "true";
+  const setLimitEvent = useEvent(setLimit);
+  const setMarketEvent = useEvent(setMarket);
 
   const handleLimitButtonClick = () => {
-    const { market, ...newParams } = params;
-    newParams[ORDER_TYPES.LIMIT] = "true";
-    setSearchParams(newParams);
+    setLimitEvent(true);
+    setMarketEvent(false);
   };
 
   const handleMarketButtonClick = () => {
-    const { limit, ...newParams } = params;
-    newParams[ORDER_TYPES.MARKET] = "true";
-    setSearchParams(newParams);
+    setLimitEvent(false);
+    setMarketEvent(true);
   };
 
   return (
