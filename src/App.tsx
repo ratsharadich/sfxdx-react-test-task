@@ -1,15 +1,13 @@
-import './entities';
+import { BrowserRouter } from "react-router-dom";
 
-import { BrowserRouter } from 'react-router-dom'
+import { Orders } from "./pages";
 
-import { Orders } from './pages'
-
-function App () {
+function App() {
   return (
     <BrowserRouter>
       <Orders />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

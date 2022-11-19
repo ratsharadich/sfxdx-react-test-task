@@ -17,7 +17,6 @@ export const OrderForm: FC = () => {
 
   const handleFormInput = useCallback(() => {
     if (outputRef.current != null) {
-      console.log(outputRef.current)
       outputRef.current.value = '123'
     }
   }, [])

@@ -1,27 +1,34 @@
-import { useGate } from 'effector-react';
-import { FC } from 'react'
-import { Background } from 'src/shared'
-import { Footer, Header, OrderDesk } from 'src/widgets'
-
-import { OrdersGate } from './model';
+import { FC, useEffect, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
+import { Background, baseSearchParams } from "src/shared";
+import { Footer, Header, OrderDesk } from "src/widgets";
 
 /** Страница совершения сделок */
 export const Orders: FC = () => {
-  useGate(OrdersGate);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  return (
-    <>
-      <div className="grid grid-rows-content w-screen h-screen absolute z-10">
-        <Header />
+  useEffect(() => {
+    if ([...searchParams].length === 0) {
+      setSearchParams(baseSearchParams);
+    }
+  }, []);
 
-        <main>
-          <OrderDesk />
-        </main>
+  return useMemo(
+    () => (
+      <>
+        <div className="grid grid-rows-content w-screen h-screen absolute z-10">
+          <Header />
 
-        <Footer />
-      </div>
+          <main>
+            <OrderDesk />
+          </main>
 
-      <Background />
-    </>
-  )
-}
+          <Footer />
+        </div>
+
+        <Background />
+      </>
+    ),
+    []
+  );
+};

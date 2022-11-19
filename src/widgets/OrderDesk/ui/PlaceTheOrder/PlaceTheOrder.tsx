@@ -1,13 +1,13 @@
-import './styles.css'
+import "./styles.css";
 
-import { FC } from 'react'
-import { OrderForm } from 'src/features'
-import { BlockTitle } from 'src/shared'
+import { FC } from "react";
+import { OrderForm } from "src/features";
+import { BlockTitle } from "src/shared";
 
-import { PLACE_THE_ORDER } from '../../constants'
-import { GridTile } from '../GridTile'
-import { OrderTypeSelector } from '../OrderTypeSelector'
-import { TransactionTypeSelector } from '../TransactionTypeSelector'
+import { PLACE_THE_ORDER } from "../../constants";
+import { GridTile } from "../GridTile";
+import { OrderTypeSelector } from "../OrderTypeSelector";
+import { TransactionTypeSelector } from "../TransactionTypeSelector";
 
 /** Раздел размещения заявки */
 export const PlaceTheOrder: FC = () => {
@@ -25,5 +25,5 @@ export const PlaceTheOrder: FC = () => {
 
       <OrderForm />
     </GridTile>
-  )
-}
+  );
+};

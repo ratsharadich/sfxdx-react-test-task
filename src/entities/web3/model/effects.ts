@@ -1,13 +1,29 @@
 import { createEffect } from "effector";
-import Web3 from "web3";
+import { contractMethods, eth } from "src/shared";
 
-import { setAccountToStorage } from "../lib";
+import { setAccountsToStorage } from "../lib";
 
-const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
-const eth = web3.eth;
+/** Запрашиваем аккаунты из Metamask */
+export const fetchAccountsFx = createEffect<undefined, string[]>(async () => {
+  const accounts = await eth.requestAccounts();
+  setAccountsToStorage(accounts);
+  return accounts;
+});
 
-export const fetchAccountFx = createEffect<undefined, string>(async () => {
-  const [account] = await eth.requestAccounts();
-  setAccountToStorage(account);
-  return account;
+/** Создаём ордер */
+export const createOrderFX = createEffect<
+{
+  tokenA: string
+  tokenB: string
+  tokenAAmount: number
+  tokenBLimitPrice: number
+},
+void
+>(async ({ tokenA, tokenB, tokenAAmount, tokenBLimitPrice }) => {
+  await contractMethods.createOrder(
+    tokenA,
+    tokenB,
+    tokenAAmount,
+    tokenBLimitPrice
+  );
 });
