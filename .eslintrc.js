@@ -22,6 +22,7 @@ module.exports = {
     "@typescript-eslint/member-delimiter-style": "warn",
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
+    "@typescript-eslint/indent": "warn",
     'space-before-function-paren': 'off',
     '@typescript-eslint/space-before-function-paren': 'off',
     'comma-dangle': 'off',

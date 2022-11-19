@@ -1,6 +1,6 @@
 import { AbiItem } from "web3-utils";
 
-export const BASE_URL = 'http://178.49.148.49:40010/';
+export const BACK_URL = "http://178.49.148.49:40010/";
 
 export const CONTRACT_ADRESS = "0x352F8C1f8576183b6c783D3e589aBB69FfBeBc47";
 export const ABI: AbiItem[] = [

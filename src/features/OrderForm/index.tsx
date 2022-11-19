@@ -1,18 +1,37 @@
 import cn from "classnames";
-import React, { FC, useCallback, useRef, useState } from "react";
+import { useEvent, useStore } from "effector-react";
+import { FC, useCallback, useRef } from "react";
 import { Button } from "src/shared";
 
 import { PLACE_THE_ORDER_BUTTON } from "./constants";
+import {
+  $isLimit,
+  $isMarket,
+  $priceLimit,
+  $tokenA,
+  $tokenAmount,
+  $tokenB,
+  clickedSubmitButton,
+} from "./model";
 import { InputsBlock, Output } from "./ui";
 
 /** Форма заполнения для публикации order */
 export const OrderForm: FC = () => {
-  const [isSubmitButtonActive, setSubmitButtonActive] =
-    useState<boolean>(false);
+  const isLimit = useStore($isLimit);
+  const isMarket = useStore($isMarket);
 
-  const handleChangeSubmitButtonActive = useCallback((status: boolean) => {
-    setSubmitButtonActive(status);
-  }, []);
+  const tokenA = useStore($tokenA);
+  const tokenB = useStore($tokenB);
+
+  const tokenAmount = useStore($tokenAmount);
+  const priceLimit = useStore($priceLimit);
+
+  const isSubmitButtonActive = Boolean(
+    (isLimit && tokenA && tokenB && tokenAmount && priceLimit) ||
+      (isMarket && tokenA && tokenB && tokenAmount)
+  );
+
+  const clickedSubmitButtonEvent = useEvent(clickedSubmitButton);
 
   const outputRef = useRef<HTMLOutputElement>(null);
 
@@ -22,11 +41,9 @@ export const OrderForm: FC = () => {
     // }
   }, []);
 
-  // const [orders, setOrders] = useState<AxiosResponse<any, any>>();
-  const handleFormSubmit = useCallback(async (e: React.MouseEvent) => {
-    // e.preventDefault();
-    // const { data } = await getOrders;
-    // setOrders(data);
+  const handleFormSubmit = useCallback((e: React.FormEvent) => {
+    e.preventDefault();
+    clickedSubmitButtonEvent();
   }, []);
 
   return (
@@ -34,17 +51,24 @@ export const OrderForm: FC = () => {
       name="orderForm"
       className="flex flex-col gap-y-[2.5rem] z-10"
       onInput={handleFormInput}
+      onSubmit={handleFormSubmit}
     >
       <div className="grid md:grid-cols-[5fr_3fr] max-md:grid-cols-1 gap-x-[1.25rem] gap-y-2">
-        <InputsBlock onChange={handleChangeSubmitButtonActive} />
+        <InputsBlock
+          isMarket={isMarket}
+          tokenA={tokenA}
+          tokenB={tokenB}
+          tokenAmount={tokenAmount}
+          priceLimit={priceLimit}
+        />
 
         <Output innerRef={outputRef} />
       </div>
 
       {/** submit button */}
       <Button
+        type="submit"
         className={cn({ "pointer-events-none": !isSubmitButtonActive })}
-        onClick={handleFormSubmit}
         active={isSubmitButtonActive}
       >
         {PLACE_THE_ORDER_BUTTON}

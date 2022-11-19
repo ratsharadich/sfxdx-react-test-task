@@ -1,113 +1,100 @@
 import cn from "classnames";
-import { useStore } from "effector-react";
-import React, { FC, useCallback, useEffect, useState } from "react";
+import { useEvent, useStore } from "effector-react";
+import { FC, useCallback, useEffect, useState } from "react";
 import { $isLogin } from "src/entities";
+import {
+  setPriceLimit,
+  setTokenA,
+  setTokenAmount,
+  setTokenB,
+} from "src/features";
 import { Input } from "src/shared";
-import { $isLimit, $isMarket } from "src/widgets";
 
 import {
-  TOKEN_A,
-  TOKEN_A_AMOUNT,
-  TOKEN_B,
-  TOKEN_B_LIMIT_PRICE,
+  TOKEN_A_AMOUNT_ID,
+  TOKEN_A_AMOUNT_PLACEHOLDER,
+  TOKEN_A_ID,
+  TOKEN_A_PLACEHOLDER,
+  TOKEN_B_ID,
+  TOKEN_B_LIMIT_PRICE_ID,
+  TOKEN_B_LIMIT_PRICE_PLACEHOLDER,
+  TOKEN_B_PLACEHOLDER,
 } from "../../constants";
 
 /** Блок инпутов формы размещения orders */
 export const InputsBlock: FC<{
-  onChange: (status: boolean) => void;
-}> = ({ onChange }) => {
-  const isLimit = useStore($isLimit);
-  const isMarket = useStore($isMarket);
-
+  isMarket: boolean;
+  tokenA: string;
+  tokenB: string;
+  tokenAmount: string;
+  priceLimit: string;
+}> = ({ isMarket, tokenA, tokenB, tokenAmount, priceLimit }) => {
   const isNotLogin = !useStore($isLogin);
 
-  const [tokenAValue, setTokenAValue] = useState<string>("");
-  const handleChangeTokenA = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setTokenAValue(e.target.value);
-    },
-    []
-  );
+  const setTokenAEvent = useEvent(setTokenA);
+  const setTokenAmountEvent = useEvent(setTokenAmount);
+  const setTokenBEvent = useEvent(setTokenB);
+  const setPriceLimitEvent = useEvent(setPriceLimit);
 
-  const [tokenAAmountValue, setTokenAAmountValue] = useState<string>("");
-  const handleChangeTokenAAmount = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setTokenAAmountValue(e.target.value);
-    },
-    []
-  );
+  const handleChangeTokenA = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTokenAEvent(e.target.value);
+  };
 
-  const [tokenBValue, setTokenBValue] = useState<string>("");
-  const handleChangeTokenB = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setTokenBValue(e.target.value);
-    },
-    []
-  );
+  const handleChangeTokenAAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTokenAmountEvent(e.target.value);
+  };
 
-  const [tokenBLimitPriceValue, setTokenBLimitPriceValue] =
-    useState<string>("");
-  const handleChangeTokenBLimitPrice = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setTokenBLimitPriceValue(e.target.value);
-    },
-    [isMarket]
-  );
+  const handleChangeTokenB = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTokenBEvent(e.target.value);
+  };
 
-  const isSubmitButtonDisabled =
-    (isLimit &&
-      tokenAValue &&
-      tokenAAmountValue &&
-      tokenBValue &&
-      tokenBLimitPriceValue) ||
-    (isMarket && tokenAValue && tokenAAmountValue && tokenBValue);
+  const handleChangeTokenBLimitPrice = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setPriceLimitEvent(e.target.value);
+  };
 
   useEffect(() => {
-    if (isMarket) {
-      setTokenBLimitPriceValue("");
-    }
-
-    if (isSubmitButtonDisabled) {
-      onChange(true);
-      return;
-    }
-
-    onChange(false);
-  }, [
-    isLimit,
-    isMarket,
-    tokenAValue,
-    tokenAAmountValue,
-    tokenBValue,
-    tokenBLimitPriceValue,
-    onChange,
-  ]);
+    if (isMarket) setPriceLimitEvent("");
+  }, [isMarket]);
 
   return (
     <>
       <Input
-        placeholder={TOKEN_A}
-        value={tokenAValue}
+        id={TOKEN_A_ID}
+        label={TOKEN_A_PLACEHOLDER}
+        pattern="^0x[a-fA-F0-9]{40}$"
+        placeholder={TOKEN_A_PLACEHOLDER}
+        value={tokenA}
         onChange={handleChangeTokenA}
         disabled={isNotLogin}
       />
       <Input
-        placeholder={TOKEN_A_AMOUNT}
-        value={tokenAAmountValue}
+        id={TOKEN_A_AMOUNT_ID}
+        label={TOKEN_A_AMOUNT_PLACEHOLDER}
+        pattern="^(0|[1-9]\d*)(\.\d+)?$"
+        placeholder={TOKEN_A_AMOUNT_PLACEHOLDER}
+        value={tokenAmount}
         onChange={handleChangeTokenAAmount}
         disabled={isNotLogin}
       />
 
       <Input
-        placeholder={TOKEN_B}
-        value={tokenBValue}
+        id={TOKEN_B_ID}
+        pattern="^0x[a-fA-F0-9]{40}$"
+        label={TOKEN_B_PLACEHOLDER}
+        placeholder={TOKEN_B_PLACEHOLDER}
+        value={tokenB}
         onChange={handleChangeTokenB}
         disabled={isNotLogin}
       />
       <Input
+        id={TOKEN_B_LIMIT_PRICE_ID}
+        label={TOKEN_B_LIMIT_PRICE_PLACEHOLDER}
+        pattern="^(0|[1-9]\d*)(\.\d+)?$"
         className={cn({ invisible: isMarket })}
-        placeholder={TOKEN_B_LIMIT_PRICE}
-        value={tokenBLimitPriceValue}
+        placeholder={TOKEN_B_LIMIT_PRICE_PLACEHOLDER}
+        value={priceLimit}
         onChange={handleChangeTokenBLimitPrice}
         disabled={isNotLogin}
       />

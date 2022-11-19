@@ -1,8 +1,13 @@
 import { useEvent, useStore } from "effector-react";
 import { FC } from "react";
+import {
+  $isLimit,
+  $isMarket,
+  setLimit,
+  setMarket,
+} from "src/features";
 
 import { LIMIT, MARKET } from "../../constants";
-import { $isLimit, $isMarket, setLimit, setMarket } from "../../model";
 import { buttonClassName } from "./constants";
 
 /** Переключатель между limit и market */

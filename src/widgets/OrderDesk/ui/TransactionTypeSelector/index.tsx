@@ -1,9 +1,14 @@
 import { useEvent, useStore } from "effector-react";
 import { FC } from "react";
+import {
+  $isBuy,
+  $isSell,
+  setBuy,
+  setSell,
+} from "src/features";
 import { Button } from "src/shared";
 
 import { BUY, SELL } from "../../constants";
-import { $isBuy, $isSell, setBuy, setSell } from "../../model";
 import { buttonClassName } from "./constants";
 
 /** Переключатель между Buy и Sell */
