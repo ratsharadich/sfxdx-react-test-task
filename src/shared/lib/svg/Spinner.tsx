@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-export const ButtonSpinner: FC = () => (
+export const Spinner: FC = () => (
   <svg
     width="20"
     height="21"

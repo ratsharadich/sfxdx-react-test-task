@@ -27,12 +27,6 @@ export const $priceLimit = createStore<string>("");
 /** Открыто ли модальное окно деталей оредара */
 export const $isModalOpened = createStore<boolean>(false);
 
-/** Противоположные ордеры с бэка */
-export const $matchedOrders = createStore<string[]>([]);
-
-/** Загружаются ли совпадения оредров */
-export const $isMatchingOrdersLoading = createStore<boolean>(false);
-
 /** Ожидаемая цена сделки */
 export const $expectedOrderPrice = combine(
   [$priceLimit, $tokenAmount],

@@ -1,9 +1,8 @@
 import { FC } from "react";
 import { createPortal } from "react-dom";
 import { ROOT_ID } from "src/constants";
-import { Modal } from "src/shared";
 
-import { Details } from "./ui";
+import { DetailsModal } from "./ui";
 
 export const OrderDetailsModal: FC<{
   onCloseModal: () => void;
@@ -11,22 +10,9 @@ export const OrderDetailsModal: FC<{
   orderSide: string;
   assetAmount: string;
   expectedOrderPrice: string;
-}> = ({
-  onCloseModal,
-  orderType,
-  orderSide,
-  assetAmount,
-  expectedOrderPrice,
-}) =>
+  isLoading: boolean;
+}> = (props) =>
   createPortal(
-    <Modal onOverlayClick={onCloseModal}>
-      <Details
-        onCrossClick={onCloseModal}
-        orderType={orderType}
-        orderSide={orderSide}
-        assetAmount={assetAmount}
-        expectedOrderPrice={expectedOrderPrice}
-      />
-    </Modal>,
+    <DetailsModal {...props} />,
     document.getElementById(ROOT_ID) as HTMLElement
   );

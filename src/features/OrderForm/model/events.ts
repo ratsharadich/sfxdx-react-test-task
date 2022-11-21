@@ -24,11 +24,5 @@ export const setTokenB = createEvent<string>();
 /** Вписываем лимит на цену за токен */
 export const setPriceLimit = createEvent<string>();
 
-/** Нажимаем кнопку подтверждения формы */
-export const clickedSubmitButton = createEvent();
-
 /** Устанавливаем состояние открытости модального окна деталей оредара */
 export const setModalStatus = createEvent<boolean>();
-
-/** Нажимаем кнопку Match orders */
-export const clickedMatchOrders = createEvent();

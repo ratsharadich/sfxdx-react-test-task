@@ -1,7 +1,7 @@
 import cn from "classnames";
 import { useEvent, useStore } from "effector-react";
 import { FC, useCallback, useRef } from "react";
-import { Button, ButtonSpinner } from "src/shared";
+import { Button, Spinner } from "src/shared";
 
 import {
   PLACE_THE_ORDER_BUTTON,
@@ -15,7 +15,7 @@ import {
   $tokenA,
   $tokenAmount,
   $tokenB,
-  clickedSubmitButton,
+  setModalStatus,
 } from "./model";
 import { InputsBlock, Output } from "./ui";
 
@@ -38,7 +38,7 @@ export const OrderForm: FC = () => {
         (isMarket && tokenA && tokenB && tokenAmount)
     ) && !isModalOpened;
 
-  const clickedSubmitButtonEvent = useEvent(clickedSubmitButton);
+  const setModalStatusEvent = useEvent(setModalStatus);
 
   const outputRef = useRef<HTMLOutputElement>(null);
 
@@ -50,7 +50,7 @@ export const OrderForm: FC = () => {
 
   const handleFormSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
-    clickedSubmitButtonEvent();
+    setModalStatusEvent(true);
   }, []);
 
   return (
@@ -83,7 +83,7 @@ export const OrderForm: FC = () => {
       >
         {isModalOpened ? (
           <div className="flex justify-center items-center gap-[0.5rem]">
-            <ButtonSpinner />
+            <Spinner />
             <span>{PLACE_THE_ORDER_BUTTON_LOADING}</span>
           </div>
         ) : (

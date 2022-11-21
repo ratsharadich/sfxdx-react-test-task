@@ -4,6 +4,7 @@ import { useEvent, useStore } from "effector-react";
 import { FC } from "react";
 import {
   $expectedOrderPrice,
+  $isMatchingOrdersLoading,
   $isModalOpened,
   $tokenAmount,
   OrderDetailsModal,
@@ -28,6 +29,7 @@ export const PlaceTheOrder: FC = () => {
   const orderSide = useStore($orderSide);
   const assetAmount = useStore($tokenAmount);
   const expectedOrderPrice = String(useStore($expectedOrderPrice));
+  const isMatchingOrdersLoading = useStore($isMatchingOrdersLoading);
 
   return (
     <GridTile
@@ -50,6 +52,7 @@ export const PlaceTheOrder: FC = () => {
           orderSide={orderSide}
           assetAmount={assetAmount}
           expectedOrderPrice={expectedOrderPrice}
+          isLoading={isMatchingOrdersLoading}
         />
       )}
     </GridTile>
