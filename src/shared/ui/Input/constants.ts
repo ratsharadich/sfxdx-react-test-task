@@ -7,7 +7,7 @@ export const inputClassName = (className?: string) =>
       "relative",
       "bg-background-gray",
       "border",
-      "border-border-gray",
+      "border-input-border-gray",
       "rounded-[0.5rem]",
       "h-full",
       "w-full",
