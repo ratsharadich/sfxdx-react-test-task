@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { BACK_URL } from "./constants";
-import { getMatchingOrdersFn } from "./interfaces";
+import { GetMatchingOrdersFn } from "./interfaces";
 
 export const api = axios.create({ baseURL: BACK_URL });
 
@@ -12,15 +12,18 @@ export const api = axios.create({ baseURL: BACK_URL });
  * Сторона ордера задается неявно - tokenA всегда покупается, tokenB всегда продается
  * Маркетный ордер задается неявно, если amountB равен нулю
  */
-export const getMatchingOrders: getMatchingOrdersFn = async ({
+export const getMatchingOrders: GetMatchingOrdersFn = async ({
   tokenA,
   tokenB,
   tokenAmount,
   priceLimit,
   isMarket,
-}) =>
-  await api.get(
+}) => {
+  const result = (await api.get(
     `/getMatchingOrders?tokenA=${tokenA}&tokenB=${tokenB}&amountA=${tokenAmount}&amountB=${priceLimit}&isMarket=${String(
       isMarket
     )}`
-  );
+  )).data;
+
+  return result as string[];
+};

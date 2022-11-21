@@ -23,3 +23,8 @@ export const $tokenB = createStore<string>("");
 
 /** Ограничение на цену за токен */
 export const $priceLimit = createStore<string>("");
+
+/** Доступные противоположные ордера */
+export const $oppositeOrders = createStore<string[]>([]);
+
+$oppositeOrders.watch((orders) => console.log('orders', orders));

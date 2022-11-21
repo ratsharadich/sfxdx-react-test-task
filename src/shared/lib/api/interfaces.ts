@@ -1,4 +1,4 @@
-export interface getMatchingOrdersFnArgs {
+export interface TokensData {
   /** Токен А */
   tokenA: string;
 
@@ -10,11 +10,13 @@ export interface getMatchingOrdersFnArgs {
 
   /** Ограничение цены за токен */
   priceLimit: string;
-
-  /** Маркетный токен или лимитный (если false) */
-  isMarket: boolean;
 }
 
-export type getMatchingOrdersFn = (
-  args: getMatchingOrdersFnArgs
+export type GetMatchingOrdersFnArgs = TokensData & {
+  /** Маркетный токен или лимитный (если false) */
+  isMarket: boolean;
+};
+
+export type GetMatchingOrdersFn = (
+  args: GetMatchingOrdersFnArgs
 ) => Promise<string[]>;

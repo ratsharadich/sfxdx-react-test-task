@@ -4,10 +4,10 @@ import { ACCOUNTS_FROM_STORAGE } from "../constants";
 import { fetchAccountsFx } from "./effects";
 
 /** Аккаунт пользователя */
-export const $account = createStore<string[]>(ACCOUNTS_FROM_STORAGE);
+export const $accounts = createStore<string[]>(ACCOUNTS_FROM_STORAGE);
 
 /** Произведено ли подключения кошельков */
-export const $isLogin = $account.map((account) => !!account.length);
+export const $isLogin = $accounts.map((account) => !!account.length);
 
 /** Происходит ли исполнение какого-либо запроса на странице */
 export const $isLoading = fetchAccountsFx.pending;

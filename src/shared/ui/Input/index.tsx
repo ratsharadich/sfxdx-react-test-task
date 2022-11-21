@@ -21,8 +21,6 @@ export const Input: FC<InputProps> = ({
   const [isInputValid, setInputValid] = useState(true);
 
   useEffect(() => {
-    console.log("я тут");
-
     if (inputValidity) {
       setInputValid(true);
       return;

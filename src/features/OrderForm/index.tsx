@@ -12,6 +12,7 @@ import {
   $tokenAmount,
   $tokenB,
   clickedSubmitButton,
+  createOrderFX,
 } from "./model";
 import { InputsBlock, Output } from "./ui";
 
@@ -44,6 +45,12 @@ export const OrderForm: FC = () => {
   const handleFormSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     clickedSubmitButtonEvent();
+    // await createOrderFX({
+    //   tokenA: "0x22961F4EB722B9582E9743a662e6f1c051add4df",
+    //   tokenB: "0x2486acF9aca15a4B43eAa00f17B3fA1e4773b295",
+    //   tokenAmount: 2,
+    //   priceLimit: 1,
+    // });
   }, []);
 
   return (
