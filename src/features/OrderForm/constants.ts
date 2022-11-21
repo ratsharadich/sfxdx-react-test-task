@@ -12,8 +12,10 @@ export const outputClassName = (isExpectedOrderPrice: boolean) =>
       "bg-background-gray",
       "rounded-[0.5rem]",
       "text-placeholder-gray",
-      'border',
-      "border-input-border-gray",
+      "border",
+      "border-border-gray",
+      "overflow-x-scroll",
+      "whitespace-pre",
     ].join(" "),
     {
       "bg-output-green text-black border-output-border-green":
@@ -38,6 +40,7 @@ export const EXPECTED_ORDER_PRICE = "Token B (including fee 3%)";
 export const OUTPUT_ID = "OUTPUT_ID";
 
 export const PLACE_THE_ORDER_BUTTON = "Place the order";
+export const PLACE_THE_ORDER_BUTTON_LOADING = "Searching for best price";
 
 export const TOKEN_PATTERN = "^0x[a-fA-F0-9]{40}$";
-export const AMOUNT_PATTERN = "^(0|[^0][1-9]?[0-9]*)([.][1-9]+)?$";
+export const AMOUNT_PATTERN = "^(0|[^0-][1-9]?[0-9]*)([.][1-9]+)?$";

@@ -1,4 +1,6 @@
+export * from './ButtonSpinner';
 export * from "./CopyLinkIcon";
+export * from "./CrossIcon";
 export * from "./FacebookIcon";
 export * from "./InstagramIcon";
 export * from "./Logo";

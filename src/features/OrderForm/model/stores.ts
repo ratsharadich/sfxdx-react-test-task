@@ -24,13 +24,17 @@ export const $tokenB = createStore<string>("");
 /** Ограничение на цену за токен */
 export const $priceLimit = createStore<string>("");
 
+/** Открыто ли модальное окно деталей оредара */
+export const $isModalOpened = createStore<boolean>(false);
+
+/** Противоположные ордеры с бэка */
+export const $matchedOrders = createStore<string[]>([]);
+
+/** Загружаются ли совпадения оредров */
+export const $isMatchingOrdersLoading = createStore<boolean>(false);
+
 /** Ожидаемая цена сделки */
 export const $expectedOrderPrice = combine(
   [$priceLimit, $tokenAmount],
   ([priceLimit, tokenAmount]) => Number(priceLimit) * Number(tokenAmount)
 );
-
-/** Доступные противоположные ордера */
-export const $oppositeOrders = createStore<string[]>([]);
-
-$oppositeOrders.watch((orders) => console.log("orders", orders));

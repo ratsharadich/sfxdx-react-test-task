@@ -1,12 +1,16 @@
 import cn from "classnames";
 import { useEvent, useStore } from "effector-react";
 import { FC, useCallback, useRef } from "react";
-import { Button } from "src/shared";
+import { Button, ButtonSpinner } from "src/shared";
 
-import { PLACE_THE_ORDER_BUTTON } from "./constants";
+import {
+  PLACE_THE_ORDER_BUTTON,
+  PLACE_THE_ORDER_BUTTON_LOADING,
+} from "./constants";
 import {
   $isLimit,
   $isMarket,
+  $isModalOpened,
   $priceLimit,
   $tokenA,
   $tokenAmount,
@@ -26,10 +30,13 @@ export const OrderForm: FC = () => {
   const tokenAmount = useStore($tokenAmount);
   const priceLimit = useStore($priceLimit);
 
-  const isSubmitButtonActive = Boolean(
-    (isLimit && tokenA && tokenB && tokenAmount && priceLimit) ||
-      (isMarket && tokenA && tokenB && tokenAmount)
-  );
+  const isModalOpened = useStore($isModalOpened);
+
+  const isSubmitButtonActive =
+    Boolean(
+      (isLimit && tokenA && tokenB && tokenAmount && priceLimit) ||
+        (isMarket && tokenA && tokenB && tokenAmount)
+    ) && !isModalOpened;
 
   const clickedSubmitButtonEvent = useEvent(clickedSubmitButton);
 
@@ -68,10 +75,20 @@ export const OrderForm: FC = () => {
       {/** submit button */}
       <Button
         type="submit"
-        className={cn({ "pointer-events-none": !isSubmitButtonActive })}
+        className={cn({
+          "!w-[17.5rem]": isModalOpened,
+          "pointer-events-none": !isSubmitButtonActive,
+        })}
         active={isSubmitButtonActive}
       >
-        {PLACE_THE_ORDER_BUTTON}
+        {isModalOpened ? (
+          <div className="flex justify-center items-center gap-[0.5rem]">
+            <ButtonSpinner />
+            <span>{PLACE_THE_ORDER_BUTTON_LOADING}</span>
+          </div>
+        ) : (
+          PLACE_THE_ORDER_BUTTON
+        )}
       </Button>
     </form>
   );

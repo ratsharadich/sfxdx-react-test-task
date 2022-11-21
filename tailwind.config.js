@@ -33,10 +33,11 @@ module.exports = {
       },
       colors: {
         'background-gray': 'rgb(240, 245, 245)',
-        'input-border-gray': 'rgb(205, 210, 221)',
+        'border-gray': 'rgb(205, 210, 221)',
         'placeholder-gray': 'rgb(156,163,175)',
         'disabled-bg-gray': 'rgb(231, 235, 241)',
         'disabled-text-gray': 'rgb(148, 150, 151)',
+        'overlay-gray': 'rgb(9, 35, 38);',
         gray: 'rgb(103, 103, 103)',
         'output-green': 'rgb(178, 241, 222)',
         'output-border-green': 'rgb(8, 216, 153)',

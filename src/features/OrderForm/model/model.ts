@@ -3,10 +3,12 @@ import { $accounts } from "src/entities";
 
 import { getMatchingOrdersFx, matchOrdersFx } from "./effects";
 import {
+  clickedMatchOrders,
   clickedSubmitButton,
   setBuy,
   setLimit,
   setMarket,
+  setModalStatus,
   setPriceLimit,
   setSell,
   setTokenA,
@@ -17,8 +19,11 @@ import {
   $isBuy,
   $isLimit,
   $isMarket,
+  $isMatchingOrdersLoading,
+  $isModalOpened,
   $isSell,
-  $oppositeOrders,
+  $matchedOrders,
+  // $oppositeOrders,
   $priceLimit,
   $tokenA,
   $tokenAmount,
@@ -37,9 +42,22 @@ $tokenB.on(setTokenB, (_, token) => token);
 $tokenAmount.on(setTokenAmount, (_, amount) => amount);
 $priceLimit.on(setPriceLimit, (_, limit) => limit);
 
-$oppositeOrders.on(matchOrdersFx.doneData, (_, orders) => orders);
+$isModalOpened.on(setModalStatus, (_, status) => status);
+
+$isMatchingOrdersLoading.on(
+  getMatchingOrdersFx.pending,
+  (_, loading) => loading
+);
+$matchedOrders.on(getMatchingOrdersFx.doneData, (_, orders) => orders);
 
 clickedSubmitButton.watch(() => console.log("clicked"));
+
+sample({
+  clock: clickedSubmitButton,
+  source: $isModalOpened,
+  fn: (status) => !status,
+  target: setModalStatus,
+});
 
 sample({
   clock: clickedSubmitButton,
@@ -56,7 +74,7 @@ sample({
 });
 
 sample({
-  clock: getMatchingOrdersFx.doneData,
+  clock: clickedMatchOrders,
   source: {
     tokenA: $tokenA,
     tokenB: $tokenB,
@@ -64,10 +82,10 @@ sample({
     priceLimit: $priceLimit,
     isMarket: $isMarket,
     accounts: $accounts,
+    orderIds: $matchedOrders,
   },
-  fn: ({ accounts, ...source }, from) => ({
+  fn: ({ accounts, ...source }) => ({
     ...source,
-    orderIds: from,
     account: accounts[0],
   }),
   target: matchOrdersFx,
