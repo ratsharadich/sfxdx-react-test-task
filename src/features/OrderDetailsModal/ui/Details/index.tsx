@@ -32,7 +32,7 @@ export const Details: FC<{
     currency?: string;
   }> = ({ title, value, currency }) => (
     <li className="flex justify-between pt-[0.5rem] border-b border-border-gray">
-      <span className="font-manrope font-medium text-base">{title}</span>
+      <h2 className="font-manrope font-medium text-base">{title}</h2>
 
       <div className="flex gap-[0.25rem] font-manrope font-semibold text-base">
         <span>{value}</span>

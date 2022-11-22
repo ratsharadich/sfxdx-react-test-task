@@ -1,7 +1,7 @@
 import { useEvent, useStore } from "effector-react";
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { $accounts, $isLoading, requestedAccounts } from "src/entities";
+import { $accounts, requestedAccounts } from "src/entities";
 import { Button, Logo } from "src/shared";
 
 import { CONNECT_WALLET } from "./constants";
@@ -10,7 +10,6 @@ import { AccountBadge } from "./ui";
 /** Хедер страницы с лого и кнопкой подключения кошелька  */
 export const Header: FC = () => {
   const [account] = useStore($accounts);
-  const isLoading = useStore($isLoading);
   const requestedAccountsEvent = useEvent(requestedAccounts);
 
   return (
@@ -19,19 +18,15 @@ export const Header: FC = () => {
         <Logo />
       </Link>
 
-      {isLoading ? (
-        "Загрузка"
-      ) : (
-        <>
-          {account ? (
-            <AccountBadge id={account} />
-          ) : (
-            <Button active onClick={requestedAccountsEvent}>
-              {CONNECT_WALLET}
-            </Button>
-          )}
-        </>
-      )}
+      <>
+        {account ? (
+          <AccountBadge id={account} />
+        ) : (
+          <Button active onClick={requestedAccountsEvent}>
+            {CONNECT_WALLET}
+          </Button>
+        )}
+      </>
     </header>
   );
 };

@@ -1,7 +1,7 @@
 import cn from "classnames";
 import { useEvent, useStore } from "effector-react";
 import { FC, useCallback, useEffect, useState } from "react";
-import { $isLogin } from "src/entities";
+import { $isLogin, $isNetworkCorrect } from "src/entities";
 import {
   $isSell,
   setPriceLimit,
@@ -27,13 +27,16 @@ import {
 
 /** Блок инпутов формы размещения orders */
 export const InputsBlock: FC<{
-  isMarket: boolean
-  tokenA: string
-  tokenB: string
-  tokenAmount: string
-  priceLimit: string
+  isMarket: boolean;
+  tokenA: string;
+  tokenB: string;
+  tokenAmount: string;
+  priceLimit: string;
 }> = ({ isMarket, tokenA, tokenB, tokenAmount, priceLimit }) => {
   const isNotLogin = !useStore($isLogin);
+  const isNetworkCorrect = useStore($isNetworkCorrect);
+  const isInputDisabled = isNotLogin || !isNetworkCorrect;
+
   const isSell = useStore($isSell);
   const limitPricePlaceHolder = isSell
     ? TOKEN_A_LIMIT_PRICE_PLACEHOLDER
@@ -75,7 +78,7 @@ export const InputsBlock: FC<{
         placeholder={TOKEN_A_PLACEHOLDER}
         value={tokenA}
         onChange={handleChangeTokenA}
-        disabled={isNotLogin}
+        disabled={isInputDisabled}
       />
       <Input
         id={TOKEN_A_AMOUNT_ID}
@@ -84,7 +87,7 @@ export const InputsBlock: FC<{
         placeholder={TOKEN_A_AMOUNT_PLACEHOLDER}
         value={tokenAmount}
         onChange={handleChangeTokenAAmount}
-        disabled={isNotLogin}
+        disabled={isInputDisabled}
       />
 
       <Input
@@ -94,7 +97,7 @@ export const InputsBlock: FC<{
         placeholder={TOKEN_B_PLACEHOLDER}
         value={tokenB}
         onChange={handleChangeTokenB}
-        disabled={isNotLogin}
+        disabled={isInputDisabled}
       />
       <Input
         id={TOKEN_LIMIT_PRICE_ID}
@@ -104,7 +107,7 @@ export const InputsBlock: FC<{
         placeholder={limitPricePlaceHolder}
         value={priceLimit}
         onChange={handleChangeTokenBLimitPrice}
-        disabled={isNotLogin}
+        disabled={isInputDisabled}
       />
     </>
   );

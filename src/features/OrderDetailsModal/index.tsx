@@ -1,8 +1,9 @@
+import { useGate } from "effector-react";
 import { FC } from "react";
-import { createPortal } from "react-dom";
-import { ROOT_ID } from "src/constants";
+import { Modal } from "src/shared";
 
-import { DetailsModal } from "./ui";
+import { OrderDetailsModalGate } from "./model";
+import { Details, Sell } from "./ui";
 
 export const OrderDetailsModal: FC<{
   onCloseModal: () => void;
@@ -10,8 +11,15 @@ export const OrderDetailsModal: FC<{
   orderSide: string;
   assetAmount: string;
   expectedOrderPrice: string;
-}> = (props) =>
-  createPortal(
-    <DetailsModal {...props} />,
-    document.getElementById(ROOT_ID) as HTMLElement
+}> = ({ onCloseModal, ...props }) => {
+  useGate(OrderDetailsModalGate);
+
+  return (
+    <Modal onOverlayClick={onCloseModal}>
+      <div className="flex flex-col gap-[1.5rem]">
+        <Details onCrossClick={onCloseModal} {...props} />
+        <Sell />
+      </div>
+    </Modal>
   );
+};
