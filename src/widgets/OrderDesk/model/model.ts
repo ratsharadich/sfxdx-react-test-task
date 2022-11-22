@@ -12,12 +12,13 @@ import {
   $tokenAmount,
   $tokenB,
   clickedMatchOrders,
+  clickedPlaceOrder,
   getMatchingOrdersFx,
   getOrdersFx,
   OrderDetailsModalGate,
 } from "src/features";
 
-import { matchOrdersFx } from "./effects";
+import { createOrderFX, matchOrdersFx } from "./effects";
 
 sample({
   clock: OrderDetailsModalGate.open,
@@ -96,4 +97,17 @@ sample({
     account: accounts[0],
   }),
   target: matchOrdersFx,
+});
+
+sample({
+  clock: clickedPlaceOrder,
+  source: {
+    tokenA: $tokenA,
+    tokenB: $tokenB,
+    tokenAmount: $tokenAmount,
+    priceLimit: $priceLimit,
+    accounts: $accounts,
+  },
+  fn: ({ accounts, ...rest }) => ({ ...rest, account: accounts[0] }),
+  target: createOrderFX,
 });

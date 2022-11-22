@@ -17,3 +17,5 @@ export const ORDERS_PORTION = 3;
 
 export const MATCH = 'Match';
 export const PLACE_ORDER = 'Place order';
+
+export const SEE_MORE = 'See more';

@@ -2,7 +2,7 @@ import { useStore } from "effector-react";
 import { FC, useState } from "react";
 import { Spinner } from "src/shared";
 
-import { ORDERS_PORTION, SELL } from "../../constants";
+import { ORDERS_PORTION, SEE_MORE, SELL } from "../../constants";
 import { $isModalQueriesLoading, $matchedOrders } from "../../model";
 import { ActionButtons } from "../ActionButtons";
 import { MatchedOrdersBlock } from "../MatchedOrdersBlock";
@@ -27,8 +27,8 @@ export const Sell: FC = () => {
       <MatchedOrdersBlock orders={displayedOrders} />
 
       {areMoreOrdersFroDisplaying && (
-        <a onClick={handleSeeMoreLinkClick} className="cursor-pointer">
-          See more
+        <a onClick={handleSeeMoreLinkClick} className="cursor-pointer text-emerald-500">
+          {SEE_MORE}
         </a>
       )}
     </>

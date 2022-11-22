@@ -1,6 +1,5 @@
 import { createEffect } from "effector";
 import {
-  contractMethods,
   getMatchingOrders,
   GetMatchingOrdersFnArgs,
   getOrders,
@@ -23,17 +22,4 @@ export const getMatchingOrdersFx = createEffect<
 >(async (args) => {
   const result = await getMatchingOrders(args);
   return result;
-});
-
-/** Создаём ордер */
-export const createOrderFX = createEffect<
-  {
-    tokenA: string;
-    tokenB: string;
-    tokenAmount: number;
-    priceLimit: number;
-  },
-  void
->(async ({ tokenA, tokenB, tokenAmount, priceLimit }) => {
-  await contractMethods.createOrder(tokenA, tokenB, tokenAmount, priceLimit);
 });
