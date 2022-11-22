@@ -9,15 +9,22 @@ export const matchOrdersFx = createEffect<MatchOrdersFnArgs, string[]>(
     orderIds,
     tokenA,
     tokenB,
-    tokenAmount,
-    priceLimit,
+    tokenAAmount,
+    tokenBAmount,
     isMarket,
     account,
   }) => {
     console.log("Тут");
 
     const result = await contractMethods
-      .matchOrders(orderIds, tokenA, tokenB, tokenAmount, priceLimit, isMarket)
+      .matchOrders(
+        orderIds,
+        tokenA,
+        tokenB,
+        tokenAAmount,
+        tokenBAmount,
+        isMarket
+      )
       .send({ from: account })
       .catch(({ message }: { message: string }) => alert(message))
       .then((result: any) => console.log("result", result));
@@ -31,14 +38,14 @@ export const createOrderFX = createEffect<
   {
     tokenA: string;
     tokenB: string;
-    tokenAmount: string;
-    priceLimit: string;
+    tokenAAmount: string;
+    tokenBAmount: string;
     account: string;
   },
   void
->(async ({ tokenA, tokenB, tokenAmount, priceLimit, account }) => {
+>(async ({ tokenA, tokenB, tokenAAmount, tokenBAmount, account }) => {
   await contractMethods
-    .createOrder(tokenA, tokenB, tokenAmount, priceLimit)
+    .createOrder(tokenA, tokenB, tokenAAmount, tokenBAmount)
     .send({ from: account })
     .catch(({ message }: { message: string }) => alert(message));
 });

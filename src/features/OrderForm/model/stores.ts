@@ -15,8 +15,8 @@ export const $isSell = createStore<boolean>(false);
 /** Токен А */
 export const $tokenA = createStore<string>("");
 
-/** Количество токентов для операции */
-export const $tokenAmount = createStore<string>("");
+/** Количество токентов А */
+export const $tokenAAmount = createStore<string>("");
 
 /** Токен B */
 export const $tokenB = createStore<string>("");
@@ -24,11 +24,22 @@ export const $tokenB = createStore<string>("");
 /** Ограничение на цену за токен */
 export const $priceLimit = createStore<string>("");
 
+/** Количество токенов В */
+export const $tokenBAmount = combine(
+  [$tokenAAmount, $priceLimit],
+  ([tokenAAmount, priceLimit]) => {
+    const limit = priceLimit || 0;
+    return String(
+      limit ? Number(tokenAAmount) * Number(limit) : tokenAAmount
+    );
+  }
+);
+
 /** Открыто ли модальное окно деталей оредара */
 export const $isModalOpened = createStore<boolean>(false);
 
 /** Ожидаемая цена сделки */
 export const $expectedOrderPrice = combine(
-  [$priceLimit, $tokenAmount],
+  [$priceLimit, $tokenAAmount],
   ([priceLimit, tokenAmount]) => Number(priceLimit) * Number(tokenAmount)
 );

@@ -17,7 +17,7 @@ import {
   $isSell,
   $priceLimit,
   $tokenA,
-  $tokenAmount,
+  $tokenAAmount,
   $tokenB,
 } from "./stores";
 
@@ -30,7 +30,7 @@ $isSell.on(setSell, (_, status) => status);
 $tokenA.on(setTokenA, (_, token) => token);
 $tokenB.on(setTokenB, (_, token) => token);
 
-$tokenAmount.on(setTokenAmount, (_, amount) => amount);
+$tokenAAmount.on(setTokenAmount, (_, amount) => amount);
 $priceLimit.on(setPriceLimit, (_, limit) => limit);
 
 $isModalOpened.on(setModalStatus, (_, status) => status);

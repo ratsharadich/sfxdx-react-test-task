@@ -6,7 +6,7 @@ import {
   $expectedOrderPrice,
   $isMatchingOrdersLoading,
   $isModalOpened,
-  $tokenAmount,
+  $tokenAAmount,
   OrderDetailsModal,
   OrderForm,
   setModalStatus,
@@ -27,7 +27,7 @@ export const PlaceTheOrder: FC = () => {
 
   const orderType = useStore($orderType);
   const orderSide = useStore($orderSide);
-  const assetAmount = useStore($tokenAmount);
+  const assetAmount = useStore($tokenAAmount);
   const expectedOrderPrice = String(useStore($expectedOrderPrice));
 
   return (

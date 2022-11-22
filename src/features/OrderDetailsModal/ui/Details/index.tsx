@@ -1,4 +1,7 @@
+import cn from "classnames";
+import { useStore } from "effector-react";
 import { FC } from "react";
+import { $isMarket } from "src/features/OrderForm/model";
 import { CrossIcon } from "src/shared";
 
 import {
@@ -30,8 +33,14 @@ export const Details: FC<{
     title: string;
     value: string;
     currency?: string;
-  }> = ({ title, value, currency }) => (
-    <li className="flex justify-between pt-[0.5rem] border-b border-border-gray">
+    className?: string;
+  }> = ({ title, value, currency, className }) => (
+    <li
+      className={cn(
+        "flex justify-between pt-[0.5rem] border-b border-border-gray",
+        className
+      )}
+    >
       <h2 className="font-manrope font-medium text-base">{title}</h2>
 
       <div className="flex gap-[0.25rem] font-manrope font-semibold text-base">
@@ -40,6 +49,8 @@ export const Details: FC<{
       </div>
     </li>
   );
+
+  const isMarket = useStore($isMarket);
 
   return (
     <section className="flex flex-col gap-y-[1.5rem]">
@@ -61,6 +72,7 @@ export const Details: FC<{
           title={EXPECTED_PRICE_TITLE}
           value={expectedOrderPrice}
           currency={USDT}
+          className={cn({ invisible: isMarket })}
         />
       </ul>
     </section>

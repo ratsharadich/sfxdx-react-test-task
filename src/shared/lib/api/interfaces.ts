@@ -5,11 +5,11 @@ export interface TokensData {
   /* Токен В */
   tokenB: string;
 
-  /* Количество токенов для операции */
-  tokenAmount: string;
+  /* Количество токенов для покупки */
+  tokenAAmount: string;
 
-  /** Ограничение цены за токен */
-  priceLimit: string;
+  /** Количество токенов продажи */
+  tokenBAmount: string;
 }
 
 export interface MarketType {
@@ -23,7 +23,7 @@ export type GetMatchingOrdersFn = (
   args: GetMatchingOrdersFnArgs
 ) => Promise<string[]>;
 
-export type GetOrdersFnArgs = Omit<TokensData, "tokenAmount" | "priceLimit"> & {
+export type GetOrdersFnArgs = Omit<TokensData, "tokenAAmount" | "tokenBAmount"> & {
   /** id пользователя */
   userId: string;
 

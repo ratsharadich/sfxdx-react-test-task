@@ -30,13 +30,13 @@ export const getOrders: GetOrdersFn = async ({
 export const getMatchingOrders: GetMatchingOrdersFn = async ({
   tokenA,
   tokenB,
-  tokenAmount,
-  priceLimit,
+  tokenAAmount,
+  tokenBAmount,
   isMarket,
 }) => {
   const result = (
     await api.get(
-      `/getMatchingOrders?tokenA=${tokenA}&tokenB=${tokenB}&amountA=${tokenAmount}&amountB=${priceLimit}&isMarket=${String(
+      `/getMatchingOrders?tokenA=${tokenA}&tokenB=${tokenB}&amountA=${tokenAAmount}&amountB=${tokenBAmount}&isMarket=${String(
         isMarket
       )}`
     )

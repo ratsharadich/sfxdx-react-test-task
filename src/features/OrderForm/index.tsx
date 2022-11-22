@@ -13,7 +13,7 @@ import {
   $isModalOpened,
   $priceLimit,
   $tokenA,
-  $tokenAmount,
+  $tokenAAmount,
   $tokenB,
   setModalStatus,
 } from "./model";
@@ -27,7 +27,7 @@ export const OrderForm: FC = () => {
   const tokenA = useStore($tokenA);
   const tokenB = useStore($tokenB);
 
-  const tokenAmount = useStore($tokenAmount);
+  const tokenAmount = useStore($tokenAAmount);
   const priceLimit = useStore($priceLimit);
 
   const isModalOpened = useStore($isModalOpened);
