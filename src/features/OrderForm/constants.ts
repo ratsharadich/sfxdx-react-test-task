@@ -33,7 +33,8 @@ export const TOKEN_B_PLACEHOLDER = "Token B smart contract address";
 export const TOKEN_B_ID = "TOKEN_B_ID";
 
 export const TOKEN_B_LIMIT_PRICE_PLACEHOLDER = "Limit price (in Token B)";
-export const TOKEN_B_LIMIT_PRICE_ID = "TOKEN_B_LIMIT_PRICE_ID";
+export const TOKEN_A_LIMIT_PRICE_PLACEHOLDER = "Limit price (in Token A)";
+export const TOKEN_LIMIT_PRICE_ID = "TOKEN_B_LIMIT_PRICE_ID";
 
 export const EXPECTED_ORDER_PRICE_PLACEHOLDER = "Expected order price";
 export const EXPECTED_ORDER_PRICE = "Token B (including fee 3%)";

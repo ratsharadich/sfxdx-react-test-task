@@ -3,6 +3,7 @@ import { useEvent, useStore } from "effector-react";
 import { FC, useCallback, useEffect, useState } from "react";
 import { $isLogin } from "src/entities";
 import {
+  $isSell,
   setPriceLimit,
   setTokenA,
   setTokenAmount,
@@ -15,23 +16,28 @@ import {
   TOKEN_A_AMOUNT_ID,
   TOKEN_A_AMOUNT_PLACEHOLDER,
   TOKEN_A_ID,
+  TOKEN_A_LIMIT_PRICE_PLACEHOLDER,
   TOKEN_A_PLACEHOLDER,
   TOKEN_B_ID,
-  TOKEN_B_LIMIT_PRICE_ID,
   TOKEN_B_LIMIT_PRICE_PLACEHOLDER,
   TOKEN_B_PLACEHOLDER,
+  TOKEN_LIMIT_PRICE_ID,
   TOKEN_PATTERN,
 } from "../../constants";
 
 /** Блок инпутов формы размещения orders */
 export const InputsBlock: FC<{
-  isMarket: boolean;
-  tokenA: string;
-  tokenB: string;
-  tokenAmount: string;
-  priceLimit: string;
+  isMarket: boolean
+  tokenA: string
+  tokenB: string
+  tokenAmount: string
+  priceLimit: string
 }> = ({ isMarket, tokenA, tokenB, tokenAmount, priceLimit }) => {
   const isNotLogin = !useStore($isLogin);
+  const isSell = useStore($isSell);
+  const limitPricePlaceHolder = isSell
+    ? TOKEN_A_LIMIT_PRICE_PLACEHOLDER
+    : TOKEN_B_LIMIT_PRICE_PLACEHOLDER;
 
   const setTokenAEvent = useEvent(setTokenA);
   const setTokenAmountEvent = useEvent(setTokenAmount);
@@ -91,11 +97,11 @@ export const InputsBlock: FC<{
         disabled={isNotLogin}
       />
       <Input
-        id={TOKEN_B_LIMIT_PRICE_ID}
-        label={TOKEN_B_LIMIT_PRICE_PLACEHOLDER}
+        id={TOKEN_LIMIT_PRICE_ID}
+        label={limitPricePlaceHolder}
         pattern={AMOUNT_PATTERN}
         className={cn({ invisible: isMarket })}
-        placeholder={TOKEN_B_LIMIT_PRICE_PLACEHOLDER}
+        placeholder={limitPricePlaceHolder}
         value={priceLimit}
         onChange={handleChangeTokenBLimitPrice}
         disabled={isNotLogin}

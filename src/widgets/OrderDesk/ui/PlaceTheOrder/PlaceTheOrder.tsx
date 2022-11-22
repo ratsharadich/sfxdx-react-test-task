@@ -52,7 +52,6 @@ export const PlaceTheOrder: FC = () => {
           orderSide={orderSide}
           assetAmount={assetAmount}
           expectedOrderPrice={expectedOrderPrice}
-          isLoading={isMatchingOrdersLoading}
         />
       )}
     </GridTile>

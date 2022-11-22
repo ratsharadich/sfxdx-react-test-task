@@ -12,16 +12,14 @@ export const DetailsModal: FC<{
   orderSide: string
   assetAmount: string
   expectedOrderPrice: string
-  isLoading: boolean
-}> = ({ onCloseModal, isLoading, ...props }) => {
+}> = ({ onCloseModal, ...props }) => {
   useGate(OrderDetailsModalGate);
 
   return (
     <Modal onOverlayClick={onCloseModal}>
-      <div className="flex flex-col gap-[0.5rem]">
+      <div className="flex flex-col gap-[1.5rem]">
         <Details onCrossClick={onCloseModal} {...props} />
-
-        <Sell isLoading={isLoading} />
+        <Sell />
       </div>
     </Modal>
   );

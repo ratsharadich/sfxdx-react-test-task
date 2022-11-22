@@ -73,7 +73,9 @@ sample({
     );
     console.log("orders", orders);
     console.log("ids", ids);
-    return orders.filter((order) => ids.includes(order.id));
+    return orders
+      .filter((order) => ids.includes(order.id))
+      .sort((a, b) => (Number(a.amountA) < Number(b.amountA) ? 1 : -1));
   },
   target: $matchedOrders,
 });

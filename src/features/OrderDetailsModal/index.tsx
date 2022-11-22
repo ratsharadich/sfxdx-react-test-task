@@ -10,7 +10,6 @@ export const OrderDetailsModal: FC<{
   orderSide: string;
   assetAmount: string;
   expectedOrderPrice: string;
-  isLoading: boolean;
 }> = (props) =>
   createPortal(
     <DetailsModal {...props} />,

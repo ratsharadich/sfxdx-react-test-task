@@ -41,6 +41,7 @@ module.exports = {
         gray: 'rgb(103, 103, 103)',
         'output-green': 'rgb(178, 241, 222)',
         'output-border-green': 'rgb(8, 216, 153)',
+        'order-green': 'rgb(178, 241, 222)',
         green: 'rgb(8, 216, 153)',
       }
     }
