@@ -19,3 +19,6 @@ export const MATCH = 'Match';
 export const PLACE_ORDER = 'Place order';
 
 export const SEE_MORE = 'See more';
+
+export const NO_MATCHES = `There is no matches 
+for your order now`;

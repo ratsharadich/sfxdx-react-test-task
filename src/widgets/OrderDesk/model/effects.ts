@@ -14,19 +14,9 @@ export const matchOrdersFx = createEffect<MatchOrdersFnArgs, string[]>(
     isMarket,
     account,
   }) => {
-    console.log("Тут");
-
     const result = await contractMethods
-      .matchOrders(
-        orderIds,
-        tokenA,
-        tokenB,
-        tokenAAmount,
-        tokenBAmount,
-        isMarket
-      )
+      .matchOrders(orderIds, tokenA, tokenB, tokenAAmount, tokenBAmount, isMarket)
       .send({ from: account })
-      .catch(({ message }: { message: string }) => alert(message))
       .then((result: any) => console.log("result", result));
 
     return result;

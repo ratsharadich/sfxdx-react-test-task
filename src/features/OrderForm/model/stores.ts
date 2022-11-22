@@ -24,22 +24,14 @@ export const $tokenB = createStore<string>("");
 /** Ограничение на цену за токен */
 export const $priceLimit = createStore<string>("");
 
-/** Количество токенов В */
-export const $tokenBAmount = combine(
-  [$tokenAAmount, $priceLimit],
-  ([tokenAAmount, priceLimit]) => {
-    const limit = priceLimit || 0;
-    return String(
-      limit ? Number(tokenAAmount) * Number(limit) : tokenAAmount
-    );
-  }
-);
-
 /** Открыто ли модальное окно деталей оредара */
 export const $isModalOpened = createStore<boolean>(false);
 
 /** Ожидаемая цена сделки */
 export const $expectedOrderPrice = combine(
   [$priceLimit, $tokenAAmount],
-  ([priceLimit, tokenAmount]) => Number(priceLimit) * Number(tokenAmount)
+  ([priceLimit, tokenAmount]) =>
+    Number(priceLimit) ? Number(priceLimit) * Number(tokenAmount) : tokenAmount
 );
+
+$expectedOrderPrice.watch((price) => console.log(price));

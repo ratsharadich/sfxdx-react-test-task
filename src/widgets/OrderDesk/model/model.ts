@@ -1,6 +1,7 @@
 import { combine, sample } from "effector";
 import { $accounts } from "src/entities";
 import {
+  $expectedOrderPrice,
   $isBuy,
   $isMarket,
   $isModalOpened,
@@ -11,7 +12,6 @@ import {
   $tokenA,
   $tokenAAmount,
   $tokenB,
-  $tokenBAmount,
   clickedMatchOrders,
   clickedPlaceOrder,
   getMatchingOrdersFx,
@@ -27,19 +27,17 @@ sample({
     tokenA: $tokenA,
     tokenB: $tokenB,
     tokenAAmount: $tokenAAmount,
-    tokenBAmount: $tokenBAmount,
     priceLimit: $priceLimit,
+    expectedOrderPrice: $expectedOrderPrice,
     isMarket: $isMarket,
     isSell: $isSell,
   },
   filter: ({ tokenA, tokenB, tokenAAmount, priceLimit }) =>
     Boolean(tokenA && tokenB && tokenAAmount && priceLimit),
-  fn: ({ tokenA, tokenB, isSell, priceLimit, ...rest }) => {
+  fn: ({ tokenA, tokenB, isSell, expectedOrderPrice, ...rest }) => {
     /** Сторона ордера задается неявно - tokenA всегда покупается, tokenB всегда продается */
-    if (isSell) {
-      return { tokenA: tokenB, tokenB: tokenA, ...rest };
-    }
-    return { tokenA, tokenB, ...rest };
+    if (isSell) return { tokenA: tokenB, tokenB: tokenA, tokenBAmount: String(expectedOrderPrice), ...rest };
+    return { tokenA, tokenB, tokenBAmount: String(expectedOrderPrice), ...rest };
   },
   target: getMatchingOrdersFx,
 });
@@ -71,10 +69,17 @@ sample({
   clock: getOrdersFx.doneData,
   filter: $isModalOpened,
   source: $matchedOrdersIds,
-  fn: (ids, orders) =>
-    orders
+  fn: (ids, orders) => {
+    console.log(
+      "orders.filter((order) => ids.includes(order.id)",
+      orders.filter((order) => ids.includes(order.id))
+    );
+    console.log("orders", orders);
+    console.log("ids", ids);
+    return orders
       .filter((order) => ids.includes(order.id))
-      .sort((a, b) => (Number(a.amountA) < Number(b.amountA) ? 1 : -1)),
+      .sort((a, b) => (Number(a.amountA) < Number(b.amountA) ? 1 : -1));
+  },
   target: $matchedOrders,
 });
 
@@ -84,13 +89,15 @@ sample({
     tokenA: $tokenA,
     tokenB: $tokenB,
     tokenAAmount: $tokenAAmount,
-    tokenBAmount: $tokenBAmount,
+    expectedOrderPrice: $expectedOrderPrice,
+    priceLimit: $priceLimit,
     isMarket: $isMarket,
     accounts: $accounts,
     orderIds: $matchedOrdersIds,
   },
-  fn: ({ accounts, ...rest }) => ({
-    ...rest,
+  fn: ({ accounts, expectedOrderPrice, ...source }) => ({
+    ...source,
+    tokenBAmount: String(expectedOrderPrice),
     account: accounts[0],
   }),
   target: matchOrdersFx,
@@ -102,21 +109,16 @@ sample({
     tokenA: $tokenA,
     tokenB: $tokenB,
     tokenAAmount: $tokenAAmount,
-    tokenBAmount: $tokenBAmount,
+    expectedOrderPrice: $expectedOrderPrice,
     isSell: $isSell,
     accounts: $accounts,
   },
-  fn: ({ accounts, tokenA, tokenB, isSell, ...rest }) => {
+  fn: ({ accounts, isSell, tokenA, tokenB, expectedOrderPrice, ...rest }) => {
     /** Сторона ордера задается неявно - tokenA всегда покупается, tokenB всегда продается */
     if (isSell) {
-      return {
-        tokenA: tokenB,
-        tokenB: tokenA,
-        account: accounts[0],
-        ...rest,
-      };
+      return { tokenA: tokenB, tokenB: tokenA, tokenBAmount: String(expectedOrderPrice), account: accounts[0], ...rest };
     }
-    return { tokenA, tokenB, account: accounts[0], ...rest };
+    return { tokenA, tokenB, tokenBAmount: String(expectedOrderPrice), account: accounts[0], ...rest };
   },
   target: createOrderFX,
 });

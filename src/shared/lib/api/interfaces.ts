@@ -5,10 +5,10 @@ export interface TokensData {
   /* Токен В */
   tokenB: string;
 
-  /* Количество токенов для покупки */
+  /* Количество токенов для операции */
   tokenAAmount: string;
 
-  /** Количество токенов продажи */
+  /** Ограничение цены за токен */
   tokenBAmount: string;
 }
 

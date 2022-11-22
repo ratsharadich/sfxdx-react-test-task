@@ -28,7 +28,7 @@ export const MatchedOrder: FC<{ amountA: string; amountB: string }> = ({
       </div>
 
       <div className="justify-self-center pl-[2.5rem]">
-        {Number(amountA) * Number(amountB)}
+        {String(Number(amountB) / Number(amountA)).slice(0, 3)}
       </div>
     </div>
   );

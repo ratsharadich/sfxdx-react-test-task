@@ -33,7 +33,9 @@ export const Output: FC<{
       </output>
 
       <label
-        className="hidden text-xs font-bold font-inter text-gray"
+        className={cn("hidden text-xs font-bold font-inter text-gray", {
+          invisible: isMarket,
+        })}
         htmlFor={OUTPUT_ID}
       >
         {EXPECTED_ORDER_PRICE_PLACEHOLDER}

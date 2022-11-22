@@ -4,8 +4,7 @@ import { Spinner } from "src/shared";
 
 import { ORDERS_PORTION, SEE_MORE, SELL } from "../../constants";
 import { $isModalQueriesLoading, $matchedOrders } from "../../model";
-import { ActionButtons } from "../ActionButtons";
-import { MatchedOrdersBlock } from "../MatchedOrdersBlock";
+import { ActionButtons, MatchedOrdersBlock, NotFound } from "..";
 
 export const Sell: FC = () => {
   const isLoading = useStore($isModalQueriesLoading);
@@ -44,7 +43,7 @@ export const Sell: FC = () => {
             {SELL}
           </span>
 
-          {areMatchedOrders ? <Orders /> : "Нема ничего"}
+          {areMatchedOrders ? <Orders /> : <NotFound />}
 
           <ActionButtons areOrders={areMatchedOrders} isloading={isLoading} />
         </>

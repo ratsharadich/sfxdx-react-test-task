@@ -6,16 +6,16 @@ export const takeTokenDecorations = (amountA: string, maxAmountA: number) => {
   const entireGridFragments = 100;
 
   /** процент текущего amountA от максимального amountA по массиву */
-  const amountARation = Math.ceil((Number(amountA) / maxAmountA) * 100);
+  const amountARatio = Math.ceil((Number(amountA) / maxAmountA) * 100);
 
   /** остаточное белое пространство элемента */
-  const restFragments = entireGridFragments - amountARation;
+  const restFragments = entireGridFragments - amountARatio;
 
   /** пространство, занимаемое количеством токенов */
-  const amountAFragments = amountARation < 50 ? 50 : amountARation;
+  const amountAFragments = amountARatio < 50 ? 50 : amountARatio;
 
   /** прозрачность плашки */
-  const opacity = amountARation === 100 ? "1" : `.${amountARation}`;
+  const opacity = amountARatio === 100 ? "1" : `.${amountARatio}`;
 
   /** цвет фона элемента */
   const backgroundColor = ` rgb(178,241,222,${opacity})`;
