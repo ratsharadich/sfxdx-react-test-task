@@ -3,7 +3,7 @@ import { FC } from "react";
 import { $accounts, requestedAccounts } from "src/entities";
 import { Button, Logo } from "src/shared";
 
-import { CONNECT_WALLET } from "./constants";
+import { CONNECT_WALLET_BUTTON } from "./constants";
 import { AccountBadge } from "./ui";
 
 /** Хедер страницы с лого и кнопкой подключения кошелька  */
@@ -22,7 +22,7 @@ export const Header: FC = () => {
           <AccountBadge id={account} />
         ) : (
           <Button active onClick={requestedAccountsEvent}>
-            {CONNECT_WALLET}
+            {CONNECT_WALLET_BUTTON}
           </Button>
         )}
       </>

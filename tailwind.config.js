@@ -43,6 +43,7 @@ module.exports = {
         '3fr.1fr': '3fr 1fr',
         '1fr.max.1fr': '1fr max-content 1fr',
         '5fr.3fr': '5fr 3fr',
+        'account-badge': '1.5rem minmax(7.5rem,auto) 1rem',
       },
       gridTemplateRows: {
         content: 'max-content auto max-content'
@@ -58,6 +59,7 @@ module.exports = {
       },
       borderRadius: {
         0.5: '0.5rem',
+        1.25: '1.25rem',
       },
       opacity: {
         15: '.15',

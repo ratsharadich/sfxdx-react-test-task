@@ -1,1 +1,1 @@
-export const CONNECT_WALLET = 'Connect Wallet'
+export const CONNECT_WALLET_BUTTON = "Connect Wallet";
