@@ -24,15 +24,10 @@ import {
   TOKEN_LIMIT_PRICE_ID,
   TOKEN_PATTERN,
 } from "../../constants";
+import { InputsBlockProps } from "../../interfaces";
 
 /** Блок инпутов формы размещения orders */
-export const InputsBlock: FC<{
-  isMarket: boolean;
-  tokenA: string;
-  tokenB: string;
-  tokenAmount: string;
-  priceLimit: string;
-}> = ({ isMarket, tokenA, tokenB, tokenAmount, priceLimit }) => {
+export const InputsBlock: FC<InputsBlockProps> = ({ isMarket, tokenA, tokenB, tokenAmount, priceLimit }) => {
   const isNotLogin = !useStore($isLogin);
   const isNetworkCorrect = useStore($isNetworkCorrect);
   const isInputDisabled = isNotLogin || !isNetworkCorrect;

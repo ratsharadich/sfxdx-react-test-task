@@ -10,13 +10,16 @@ module.exports = {
       },
       width: {
         10: '10rem',
+        17.5: '17.5rem',
         30: '30rem',
       },
       height: {
         3: '3rem',
+        3.125: '3.125rem',
       },
       padding: {
         0.5: '0.5rem',
+        0.75: '0.75rem',
         1: '1rem',
         1.25: '1.25rem',
         1.5: '1.5rem',
@@ -29,7 +32,8 @@ module.exports = {
       },
       gridTemplateColumns: {
         '3fr.1fr': '3fr 1fr',
-        '1fr.max.1fr': '1fr max-content 1fr'
+        '1fr.max.1fr': '1fr max-content 1fr',
+        '5fr.3fr': '5fr 3fr',
       },
       gridTemplateRows: {
         content: 'max-content auto max-content'
@@ -40,7 +44,8 @@ module.exports = {
         1: '1rem',
         1.25: '1.25rem',
         1.5: '1.5rem',
-        2: '2rem'
+        2: '2rem',
+        2.5: '2.5rem',
       },
       borderRadius: {
         0.5: '0.5rem',

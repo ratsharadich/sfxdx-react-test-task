@@ -42,12 +42,6 @@ export const OrderForm: FC = () => {
 
   const outputRef = useRef<HTMLOutputElement>(null);
 
-  const handleFormInput = useCallback(() => {
-    // if (outputRef.current != null) {
-    //   outputRef.current.value = '123'
-    // }
-  }, []);
-
   const handleFormSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     setModalStatusEvent(true);
@@ -56,11 +50,10 @@ export const OrderForm: FC = () => {
   return (
     <form
       name="orderForm"
-      className="flex flex-col gap-y-[2.5rem] z-10"
-      onInput={handleFormInput}
+      className="flex flex-col gap-y-2.5 z-10"
       onSubmit={handleFormSubmit}
     >
-      <div className="grid md:grid-cols-[5fr_3fr] max-md:grid-cols-1 gap-x-[1.25rem] gap-y-2">
+      <div className="grid md:grid-cols-5fr.3fr max-md:grid-cols-1 gap-x-1.25 gap-y-2">
         <InputsBlock
           isMarket={isMarket}
           tokenA={tokenA}
@@ -76,13 +69,13 @@ export const OrderForm: FC = () => {
       <Button
         type="submit"
         className={cn({
-          "!w-[17.5rem]": isModalOpened,
+          "!w-17.5": isModalOpened,
           "pointer-events-none": !isSubmitButtonActive,
         })}
         active={isSubmitButtonActive}
       >
         {isModalOpened ? (
-          <div className="flex justify-center items-center gap-[0.5rem]">
+          <div className="flex justify-center items-center gap-0.5">
             <Spinner />
             <span>{PLACE_THE_ORDER_BUTTON_LOADING}</span>
           </div>

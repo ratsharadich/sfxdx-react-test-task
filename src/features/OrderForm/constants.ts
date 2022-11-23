@@ -4,13 +4,13 @@ export const outputClassName = (isExpectedOrderPrice: boolean) =>
   cn(
     [
       "flex",
-      "px-[1rem]",
-      "py-[0.75rem]",
+      "px-1",
+      "py-0.75",
       "items-center",
-      "w-[17.5rem]",
-      "h-[3.125rem]",
+      "w-17.5",
+      "h-3.125",
       "bg-background-gray",
-      "rounded-[0.5rem]",
+      "rounded-0.5",
       "text-placeholder-gray",
       "border",
       "border-border-gray",

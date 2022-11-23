@@ -1,6 +1,6 @@
 import cn from "classnames";
 import { useStore } from "effector-react";
-import React, { FC } from "react";
+import { FC } from "react";
 
 import {
   EXPECTED_ORDER_PRICE,
@@ -8,12 +8,11 @@ import {
   OUTPUT_ID,
   outputClassName,
 } from "../../constants";
+import { OutputProps } from "../../interfaces";
 import { $expectedOrderPrice, $isMarket } from "../../model";
 
 /** Вывод формы размещения order */
-export const Output: FC<{
-  innerRef: React.Ref<HTMLOutputElement>;
-}> = ({ innerRef }) => {
+export const Output: FC<OutputProps> = ({ innerRef }) => {
   const expectedOrderPrice = useStore($expectedOrderPrice);
   const isMarket = useStore($isMarket);
 
