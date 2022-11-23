@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { Link } from 'react-router-dom'
 import {
   FacebookIcon,
   InstagramIcon,
@@ -7,25 +6,27 @@ import {
   YouTubeIcon
 } from 'src/shared'
 
+import { SocialMediaClassName } from '../../constants'
+
 /** Блок футера с ссылками на социальные сети */
 export const SocialMedia: FC = () => {
   return (
-    <section className="flex gap-2 md:justify-self-end max-md:justify-self-center md:order-3 max-md:order-3">
-      <Link to="/">
+    <section className={SocialMediaClassName}>
+      <a href="/">
         <FacebookIcon />
-      </Link>
+      </a>
 
-      <Link to="/">
+      <a href="/">
         <TwitterIcon />
-      </Link>
+      </a>
 
-      <Link to="/">
+      <a href="/">
         <YouTubeIcon />
-      </Link>
+      </a>
 
-      <Link to="/">
+      <a href="/">
         <InstagramIcon />
-      </Link>
+      </a>
     </section>
   )
 }
