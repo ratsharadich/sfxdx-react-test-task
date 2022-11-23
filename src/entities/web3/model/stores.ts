@@ -15,5 +15,3 @@ export const $networkType = createStore<string>("");
 export const $isNetworkCorrect = $networkType.map(
   (type) => type === TARGET_NETWORK_TYPE
 );
-
-$isLogin.watch((login) => console.log("login", login));

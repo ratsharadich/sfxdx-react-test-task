@@ -14,27 +14,17 @@ import {
   TRADING_PAIR_TITLE,
   USDT,
 } from "../../constants";
+import { DetailsProps, ListItemProps } from "../interfaces";
 
 /** Информация по ордеру */
-export const Details: FC<{
-  onCrossClick: () => void;
-  orderType: string;
-  orderSide: string;
-  assetAmount: string;
-  expectedOrderPrice: string;
-}> = ({
+export const Details: FC<DetailsProps> = ({
   onCrossClick,
   orderType,
   orderSide,
   assetAmount,
   expectedOrderPrice,
 }) => {
-  const ListIem: FC<{
-    title: string;
-    value: string;
-    currency?: string;
-    className?: string;
-  }> = ({ title, value, currency, className }) => (
+  const ListIem: FC<ListItemProps> = ({ title, value, currency, className }) => (
     <li
       className={cn(
         "flex justify-between pt-[0.5rem] border-b border-border-gray",

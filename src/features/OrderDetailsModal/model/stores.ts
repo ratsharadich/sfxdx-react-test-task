@@ -23,13 +23,7 @@ export const $matchedOrders = createStore<Array<Record<string, string>>>(
   []
 ).reset(OrderDetailsModalGate.close);
 
-/** Среднее значение amountA по массиву смтэтченных оредеров */
+/** Максимальное значение amountA по массиву смтэтченных оредеров */
 export const $maxAmountA = $matchedOrders.map((orders) =>
   Math.max(...orders.map(({ amountA }) => Number(amountA)))
-);
-
-$matchedOrdersIds.watch((ids) => console.log("ids", ids));
-
-$matchedOrders.watch((matchedOrders) =>
-  console.log(matchedOrders, "matchedOrders")
 );

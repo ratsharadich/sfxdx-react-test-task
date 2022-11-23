@@ -5,8 +5,9 @@ import { Button } from "src/shared";
 
 import { MATCH, PLACE_ORDER } from "../../constants";
 import { clickedMatchOrders, clickedPlaceOrder } from "../../model";
+import { ActionButtonProps } from "../interfaces";
 
-export const ActionButtons: FC<{ areOrders: boolean; isloading: boolean }> = ({
+export const ActionButtons: FC<ActionButtonProps> = ({
   areOrders,
   isloading,
 }) => {
@@ -24,10 +25,10 @@ export const ActionButtons: FC<{ areOrders: boolean; isloading: boolean }> = ({
   };
 
   return (
-    <div className="flex gap-[0.5rem]">
+    <div className="flex gap-0.5">
       <Button
         active={isMatchButtonActive}
-        className={cn("!w-[10rem]", {
+        className={cn("!w-10", {
           "pointer-events-none": !isMatchButtonActive,
         })}
         onClick={handleMatchOrdersButtonClick}
@@ -37,7 +38,7 @@ export const ActionButtons: FC<{ areOrders: boolean; isloading: boolean }> = ({
 
       <Button
         active={isPlaceOrderButtonActive}
-        className={cn("!w-[10rem]", {
+        className={cn("!w-10", {
           "pointer-events-none": !isPlaceOrderButtonActive,
         })}
         onClick={handlePlaceOrderButtonClick}

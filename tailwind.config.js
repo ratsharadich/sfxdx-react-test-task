@@ -8,6 +8,10 @@ module.exports = {
         manrope: 'Manrope',
         inter: 'Inter'
       },
+      width: {
+        10: '10rem',
+        30: '30rem',
+      },
       padding: {
         0.5: '0.5rem',
         1.5: '1.5rem',
@@ -26,9 +30,10 @@ module.exports = {
         content: 'max-content auto max-content'
       },
       gap: {
+        0.5: '0.5rem',
+        1: '1rem',
         1.25: '1.25rem',
         1.5: '1.5rem',
-        1: '1rem',
         2: '2rem'
       },
       colors: {

@@ -8,7 +8,7 @@ export const NetworkWarningModal: FC<{
   onCloseClick: () => void;
 }> = ({ onCloseClick }) => {
   return (
-    <Modal contentClassName="flex flex-col items-center gap-[1.5rem] !w-[30rem]">
+    <Modal contentClassName="flex flex-col items-center gap-1.5 !w-30">
       <div className="flex justify-between w-full">
         <h2 className="font-gilroy font-bold text-2xl">{TITLE}</h2>
         <CrossIcon className="cursor-pointer" onClick={onCloseClick} />
