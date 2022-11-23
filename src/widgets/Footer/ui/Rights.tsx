@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Logo, ReservedRights } from 'src/shared'
 
-import { RightsClassName } from '../../constants'
+import { RightsClassName } from '../constants'
 
 /** Блок футера с лого и @ all rights reserved */
 export const Rights: FC = () => {

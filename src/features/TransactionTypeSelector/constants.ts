@@ -18,3 +18,6 @@ export const transactionTypeSelectorClassName = [
   "bg-background-gray",
   "rounded-0.5",
 ].join(" ");
+
+export const BUY = 'Buy'
+export const SELL = 'Sell'

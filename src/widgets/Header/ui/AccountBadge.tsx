@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { CopyLinkIcon, MetamaskIcon } from "src/shared";
 
-import { AccountBadgeProps } from "../../interfaces";
-import { AccountBadgeClassName } from "./constants";
+import { AccountBadgeClassName } from "../constants";
+import { AccountBadgeProps } from "../interfaces";
 
 /** Бейдж аккаунта авторизованного пользователя */
 export const AccountBadge: FC<AccountBadgeProps> = ({ id }) => {

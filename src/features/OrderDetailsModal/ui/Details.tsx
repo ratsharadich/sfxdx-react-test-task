@@ -13,8 +13,8 @@ import {
   ORDER_TYPE_TITLE,
   TRADING_PAIR_TITLE,
   USDT,
-} from "../../constants";
-import { DetailsProps, ListItemProps } from "../../interfaces";
+} from "../constants";
+import { DetailsProps, ListItemProps } from "../interfaces";
 
 /** Информация по ордеру */
 export const Details: FC<DetailsProps> = ({

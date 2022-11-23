@@ -5,7 +5,7 @@ import {
   policiesClassName,
   PRIVACY_POLICY,
   TERMS_AND_CONDITIONS
-} from '../../constants'
+} from '../constants'
 
 /** Блок футера с ссылками на политики */
 export const Policies: FC = () => {

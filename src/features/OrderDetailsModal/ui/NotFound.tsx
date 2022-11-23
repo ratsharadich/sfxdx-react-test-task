@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { NO_MATCHES } from "../../constants";
+import { NO_MATCHES } from "../constants";
 
 /** Заглушка, когда не найдены смэтченные ордеры */
 export const NotFound: FC = () => {

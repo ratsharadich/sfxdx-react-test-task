@@ -8,15 +8,15 @@ import {
   $tokenAAmount,
   OrderDetailsModal,
   OrderForm,
+  OrderTypeSelector,
   setModalStatus,
+  TransactionTypeSelector,
 } from "src/features";
 import { BlockTitle } from "src/shared";
 
 import { PLACE_THE_ORDER } from "../../constants";
 import { $orderSide, $orderType } from "../../model";
 import { GridTile } from "../GridTile";
-import { OrderTypeSelector } from "../OrderTypeSelector";
-import { TransactionTypeSelector } from "../TransactionTypeSelector";
 
 /** Раздел размещения заявки */
 export const PlaceTheOrder: FC = () => {

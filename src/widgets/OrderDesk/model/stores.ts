@@ -1,7 +1,7 @@
 import { combine } from "effector";
-import { $isBuy, $isLimit, $isMarket, $isSell } from "src/features";
+import { $isBuy, $isLimit, $isMarket, $isSell, BUY, SELL } from "src/features";
 
-import { BUY, LIMIT, MARKET, SELL } from "../constants";
+import { LIMIT, MARKET } from "../constants";
 
 export const $orderType = combine(
   [$isLimit, $isMarket],

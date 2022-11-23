@@ -23,8 +23,8 @@ import {
   TOKEN_B_PLACEHOLDER,
   TOKEN_LIMIT_PRICE_ID,
   TOKEN_PATTERN,
-} from "../../constants";
-import { InputsBlockProps } from "../../interfaces";
+} from "../constants";
+import { InputsBlockProps } from "../interfaces";
 
 /** Блок инпутов формы размещения orders */
 export const InputsBlock: FC<InputsBlockProps> = ({ isMarket, tokenA, tokenB, tokenAmount, priceLimit }) => {

@@ -7,9 +7,9 @@ import {
   EXPECTED_ORDER_PRICE_PLACEHOLDER,
   OUTPUT_ID,
   outputClassName,
-} from "../../constants";
-import { OutputProps } from "../../interfaces";
-import { $expectedOrderPrice, $isMarket } from "../../model";
+} from "../constants";
+import { OutputProps } from "../interfaces";
+import { $expectedOrderPrice, $isMarket } from "../model";
 
 /** Вывод формы размещения order */
 export const Output: FC<OutputProps> = ({ innerRef }) => {

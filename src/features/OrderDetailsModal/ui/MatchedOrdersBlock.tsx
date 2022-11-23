@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-import { PRICE_USDT, SIZE_ETH } from "../../constants";
-import { MatchedOrdersBlockProps } from "../../interfaces";
-import { MatchedOrder } from "../MathcedOrder";
+import { PRICE_USDT, SIZE_ETH } from "../constants";
+import { MatchedOrdersBlockProps } from "../interfaces";
+import { MatchedOrder } from "./MatchedOrder";
 
 /** Блок со списком сметченных ордеров */
 export const MatchedOrdersBlock: FC<MatchedOrdersBlockProps> = ({ orders }) => (

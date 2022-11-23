@@ -12,3 +12,21 @@ export const headerClassName = [
   "border-g",
   "border-border-gray",
 ].join(" ");
+
+export const AccountBadgeClassName = [
+  "grid",
+  "grid-cols-account-badge",
+  "gap-0.5",
+  "px-0.75",
+  "font-manrope",
+  "text-sm",
+  "font-bold",
+  "text-green",
+  "items-center",
+  "justify-center",
+  "h-2.75",
+  "w-12.5",
+  "rounded-1.25",
+  "bg-white",
+  "cursor-pointer",
+].join(" ");

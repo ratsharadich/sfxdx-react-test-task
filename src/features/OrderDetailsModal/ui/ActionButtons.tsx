@@ -3,9 +3,9 @@ import { useEvent } from "effector-react";
 import { FC } from "react";
 import { Button } from "src/shared";
 
-import { MATCH, PLACE_ORDER } from "../../constants";
-import { ActionButtonProps } from "../../interfaces";
-import { clickedMatchOrders, clickedPlaceOrder } from "../../model";
+import { MATCH, PLACE_ORDER } from "../constants";
+import { ActionButtonProps } from "../interfaces";
+import { clickedMatchOrders, clickedPlaceOrder } from "../model";
 
 /** Кнопка Match и PlaceOrder */
 export const ActionButtons: FC<ActionButtonProps> = ({

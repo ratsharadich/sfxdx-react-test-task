@@ -1,8 +1,8 @@
 import { useStore } from "effector-react";
 import { FC } from "react";
 
-import { takeTokenDecorations } from "../../lib";
-import { $maxAmountA } from "../../model";
+import { takeTokenDecorations } from "../lib";
+import { $maxAmountA } from "../model";
 
 /** Элемент смэтченного ордера */
 export const MatchedOrder: FC<{ amountA: string; amountB: string }> = ({

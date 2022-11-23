@@ -1,15 +1,9 @@
 import { useEvent, useStore } from "effector-react";
 import { FC } from "react";
-import {
-  $isBuy,
-  $isSell,
-  setBuy,
-  setSell,
-} from "src/features";
+import { $isBuy, $isSell, setBuy, setSell } from "src/features";
 import { Button } from "src/shared";
 
-import { BUY, SELL } from "../../constants";
-import { buttonClassName, transactionTypeSelectorClassName } from "./constants";
+import { buttonClassName, BUY, SELL, transactionTypeSelectorClassName } from "./constants";
 
 /** Переключатель между Buy и Sell */
 export const TransactionTypeSelector: FC = () => {

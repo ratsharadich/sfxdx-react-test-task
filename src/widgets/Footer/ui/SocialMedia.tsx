@@ -6,7 +6,7 @@ import {
   YouTubeIcon
 } from 'src/shared'
 
-import { SocialMediaClassName } from '../../constants'
+import { SocialMediaClassName } from '../constants'
 
 /** Блок футера с ссылками на социальные сети */
 export const SocialMedia: FC = () => {

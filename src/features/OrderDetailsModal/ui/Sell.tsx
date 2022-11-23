@@ -2,9 +2,9 @@ import { useStore } from "effector-react";
 import { FC, useState } from "react";
 import { Spinner } from "src/shared";
 
-import { ORDERS_PORTION, SEE_MORE, SELL } from "../../constants";
-import { $isModalQueriesLoading, $matchedOrders } from "../../model";
-import { ActionButtons, MatchedOrdersBlock, NotFound } from "..";
+import { ORDERS_PORTION, SEE_MORE, SELL } from "../constants";
+import { $isModalQueriesLoading, $matchedOrders } from "../model";
+import { ActionButtons, MatchedOrdersBlock, NotFound } from ".";
 
 /** Блок с кнопками взаимодействия с модалкой и списком смэтченных ордеров */
 export const Sell: FC = () => {
