@@ -9,7 +9,7 @@ import {
 import { Button } from "src/shared";
 
 import { BUY, SELL } from "../../constants";
-import { buttonClassName } from "./constants";
+import { buttonClassName, transactionTypeSelectorClassName } from "./constants";
 
 /** Переключатель между Buy и Sell */
 export const TransactionTypeSelector: FC = () => {
@@ -30,7 +30,7 @@ export const TransactionTypeSelector: FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-between p-[0.25rem] max-w-[19.5rem] h-[2.75rem] bg-background-gray rounded-[0.5rem]">
+    <div className={transactionTypeSelectorClassName}>
       <Button
         className={buttonClassName(!isBuy)}
         onClick={handleBuyButtonClick}

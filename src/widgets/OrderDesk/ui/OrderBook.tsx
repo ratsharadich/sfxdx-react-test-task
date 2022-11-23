@@ -6,6 +6,7 @@ import { GridTile } from './GridTile'
 
 /** Раздел зарегистрированных ордеров в виде биржевого стакана  */
 export const OrderBook: FC = () => {
+  /** TODO: Прикрутить данные  */
   const contentMock = false
 
   return (

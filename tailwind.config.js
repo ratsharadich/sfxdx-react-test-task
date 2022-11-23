@@ -9,6 +9,8 @@ module.exports = {
         inter: 'Inter'
       },
       width: {
+        4.5: '4.5rem',
+        9.25: '9.25rem',
         10: '10rem',
         12.5: '12.5rem',
         17.5: '17.5rem',
@@ -16,7 +18,11 @@ module.exports = {
         30: '30rem',
         'half-screen': '50vw',
       },
+      maxWidth: {
+        19.5: '19.5rem',
+      },
       height: {
+        2.25: '2.25rem',
         2.75: '2.75rem',
         3: '3rem',
         3.125: '3.125rem',
@@ -25,7 +31,11 @@ module.exports = {
       maxHeight: {
         '85screen': '85vh',
       },
+      minHeight: {
+        20.5: '20.5rem',
+      },
       padding: {
+        0.25: '0.25rem',
         0.5: '0.5rem',
         0.75: '0.75rem',
         1: '1rem',

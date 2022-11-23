@@ -11,7 +11,7 @@ export const MyOrders: FC = () => {
 
   return (
     <GridTile
-      className="min-h-[20.5rem] md:order-3 max-md:order-2"
+      className="min-h-20.5 md:order-3 max-md:order-2"
       dataTestId="MyOrders"
     >
       <BlockTitle text={MY_ORDERS} />

@@ -70,12 +70,6 @@ sample({
   filter: $isModalOpened,
   source: $matchedOrdersIds,
   fn: (ids, orders) => {
-    console.log(
-      "orders.filter((order) => ids.includes(order.id)",
-      orders.filter((order) => ids.includes(order.id))
-    );
-    console.log("orders", orders);
-    console.log("ids", ids);
     return orders
       .filter((order) => ids.includes(order.id))
       .sort((a, b) => (Number(a.amountA) < Number(b.amountA) ? 1 : -1));

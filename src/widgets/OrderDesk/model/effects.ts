@@ -1,7 +1,7 @@
 import { createEffect } from "effector";
 import { contractMethods } from "src/shared";
 
-import { MatchOrdersFnArgs } from "../interfaces";
+import { CreateOrderFnArgs, MatchOrdersFnArgs } from "../interfaces";
 
 /** Сопоставляем список переданных ордеров */
 export const matchOrdersFx = createEffect<MatchOrdersFnArgs, string[]>(
@@ -15,30 +15,27 @@ export const matchOrdersFx = createEffect<MatchOrdersFnArgs, string[]>(
     account,
   }) => {
     const result = await contractMethods
-      .matchOrders(orderIds, tokenA, tokenB, tokenAAmount, tokenBAmount, isMarket)
+      .matchOrders(
+        orderIds,
+        tokenA,
+        tokenB,
+        tokenAAmount,
+        tokenBAmount,
+        isMarket
+      )
       .send({ from: account })
-      .then((result: any) => console.log("result", result));
+      .catch(({ message }: { message: string }) => alert(message));
 
     return result;
   }
 );
 
 /** Создаём ордер */
-export const createOrderFX = createEffect<
-  {
-    tokenA: string;
-    tokenB: string;
-    tokenAAmount: string;
-    tokenBAmount: string;
-    account: string;
-  },
-  void
->(async ({ tokenA, tokenB, tokenAAmount, tokenBAmount, account }) => {
-  await contractMethods
-    .createOrder(tokenA, tokenB, tokenAAmount, tokenBAmount)
-    .send({ from: account })
-    .catch(({ message }: { message: string }) => alert(message));
-});
-
-matchOrdersFx.doneData.watch((data) => console.log("data", data));
-createOrderFX.doneData.watch((data) => console.log("createOrderFX", data));
+export const createOrderFX = createEffect<CreateOrderFnArgs, void>(
+  async ({ tokenA, tokenB, tokenAAmount, tokenBAmount, account }) => {
+    await contractMethods
+      .createOrder(tokenA, tokenB, tokenAAmount, tokenBAmount)
+      .send({ from: account })
+      .catch(({ message }: { message: string }) => alert(message));
+  }
+);

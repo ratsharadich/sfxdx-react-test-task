@@ -31,7 +31,7 @@ export const PlaceTheOrder: FC = () => {
 
   return (
     <GridTile
-      className="gap-y-[2.5rem] relative svg-pattern"
+      className="gap-y-2.5 relative svg-pattern"
       dataTestId="PlaceTheOrder"
     >
       <div className="flex flex-wrap items-center gap-1.5">
