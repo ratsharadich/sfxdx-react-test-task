@@ -14,7 +14,7 @@ module.exports = {
         17.5: '17.5rem',
         24.75: '24.75rem',
         30: '30rem',
-        'half-screen': '50wv',
+        'half-screen': '50vw',
       },
       height: {
         2.75: '2.75rem',
