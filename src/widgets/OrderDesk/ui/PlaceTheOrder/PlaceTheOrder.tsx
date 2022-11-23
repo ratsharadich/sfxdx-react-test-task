@@ -4,7 +4,6 @@ import { useEvent, useStore } from "effector-react";
 import { FC } from "react";
 import {
   $expectedOrderPrice,
-  $isMatchingOrdersLoading,
   $isModalOpened,
   $tokenAAmount,
   OrderDetailsModal,

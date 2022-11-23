@@ -34,7 +34,7 @@ export const Sell: FC = () => {
   );
 
   return (
-    <section className="flex flex-col gap-[1.5rem] justify-center items-center w-full">
+    <section className="flex flex-col gap-1.5 justify-center items-center w-full">
       {isLoading ? (
         <Spinner />
       ) : (

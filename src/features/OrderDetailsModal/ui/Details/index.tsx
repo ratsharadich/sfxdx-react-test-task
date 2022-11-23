@@ -14,7 +14,7 @@ import {
   TRADING_PAIR_TITLE,
   USDT,
 } from "../../constants";
-import { DetailsProps, ListItemProps } from "../interfaces";
+import { DetailsProps, ListItemProps } from "../../interfaces";
 
 /** Информация по ордеру */
 export const Details: FC<DetailsProps> = ({
@@ -27,13 +27,13 @@ export const Details: FC<DetailsProps> = ({
   const ListIem: FC<ListItemProps> = ({ title, value, currency, className }) => (
     <li
       className={cn(
-        "flex justify-between pt-[0.5rem] border-b border-border-gray",
+        "flex justify-between pt-0.5 border-b border-border-gray",
         className
       )}
     >
       <h2 className="font-manrope font-medium text-base">{title}</h2>
 
-      <div className="flex gap-[0.25rem] font-manrope font-semibold text-base">
+      <div className="flex gap-0.25 font-manrope font-semibold text-base">
         <span>{value}</span>
         <span className="text-disabled-text-gray">{currency}</span>
       </div>
@@ -43,7 +43,7 @@ export const Details: FC<DetailsProps> = ({
   const isMarket = useStore($isMarket);
 
   return (
-    <section className="flex flex-col gap-y-[1.5rem]">
+    <section className="flex flex-col gap-y-1.5">
       <div className="flex justify-between items-center">
         <span className="font-namrope font-bold text-2xl">{ORDER_DETAILS}</span>
         <CrossIcon className="cursor-pointer" onClick={onCrossClick} />

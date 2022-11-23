@@ -16,10 +16,10 @@ export const MatchedOrder: FC<{ amountA: string; amountB: string }> = ({
   );
 
   return (
-    <div className="grid grid-cols-2 w-full h-[3rem]">
+    <div className="grid grid-cols-2 w-full h-3">
       <div className="grid grid-flow-col" style={{ gridTemplateColumns }}>
         <div
-          className="flex items-center pl-[1.25rem] rounded-[0.5rem] overflow-x-scroll"
+          className="flex items-center pl-1.25 rounded-0.5 overflow-x-scroll"
           style={{ backgroundColor }}
         >
           {amountA}
@@ -27,7 +27,7 @@ export const MatchedOrder: FC<{ amountA: string; amountB: string }> = ({
         <div />
       </div>
 
-      <div className="justify-self-center pl-[2.5rem]">
+      <div className="justify-self-center pl-2.5">
         {String(Number(amountB) / Number(amountA)).slice(0, 3)}
       </div>
     </div>

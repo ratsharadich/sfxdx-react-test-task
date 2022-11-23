@@ -4,8 +4,8 @@ import { FC } from "react";
 import { Button } from "src/shared";
 
 import { MATCH, PLACE_ORDER } from "../../constants";
+import { ActionButtonProps } from "../../interfaces";
 import { clickedMatchOrders, clickedPlaceOrder } from "../../model";
-import { ActionButtonProps } from "../interfaces";
 
 export const ActionButtons: FC<ActionButtonProps> = ({
   areOrders,

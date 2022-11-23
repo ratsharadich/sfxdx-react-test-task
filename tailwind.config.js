@@ -12,8 +12,13 @@ module.exports = {
         10: '10rem',
         30: '30rem',
       },
+      height: {
+        3: '3rem',
+      },
       padding: {
         0.5: '0.5rem',
+        1: '1rem',
+        1.25: '1.25rem',
         1.5: '1.5rem',
         2: '2rem',
         2.25: '2.25rem',
@@ -30,11 +35,15 @@ module.exports = {
         content: 'max-content auto max-content'
       },
       gap: {
+        0.25: '0.25rem',
         0.5: '0.5rem',
         1: '1rem',
         1.25: '1.25rem',
         1.5: '1.5rem',
         2: '2rem'
+      },
+      borderRadius: {
+        0.5: '0.5rem',
       },
       colors: {
         'background-gray': 'rgb(240, 245, 245)',
