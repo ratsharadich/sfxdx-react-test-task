@@ -12,8 +12,8 @@ export const Header: FC = () => {
   const requestedAccountsEvent = useEvent(requestedAccounts);
 
   return (
-    <header className="flex md:justify-center max-md:justify-between items-center pr-4.5 py-1.5 max-md:px-[1.25rem] border-b border-g border-[#CDD2DD]">
-      <a href="/" className="md:mr-auto md:ml-[50vw] md:translate-x-[-50%]">
+    <header className="">
+      <a href="/" className="md:mr-auto md:ml-half-screen-with md:translate-x-minus50%">
         <Logo />
       </a>
 

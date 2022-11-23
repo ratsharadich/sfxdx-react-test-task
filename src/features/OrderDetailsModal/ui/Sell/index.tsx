@@ -6,6 +6,7 @@ import { ORDERS_PORTION, SEE_MORE, SELL } from "../../constants";
 import { $isModalQueriesLoading, $matchedOrders } from "../../model";
 import { ActionButtons, MatchedOrdersBlock, NotFound } from "..";
 
+/** Блок с кнопками взаимодействия с модалкой и списком смэтченных ордеров */
 export const Sell: FC = () => {
   const isLoading = useStore($isModalQueriesLoading);
   const matchedOrders = useStore($matchedOrders);

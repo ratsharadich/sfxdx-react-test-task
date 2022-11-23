@@ -33,5 +33,3 @@ export const $expectedOrderPrice = combine(
   ([priceLimit, tokenAmount]) =>
     Number(priceLimit) ? Number(priceLimit) * Number(tokenAmount) : tokenAmount
 );
-
-$expectedOrderPrice.watch((price) => console.log(price));

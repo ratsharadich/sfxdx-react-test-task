@@ -7,6 +7,7 @@ import { MATCH, PLACE_ORDER } from "../../constants";
 import { ActionButtonProps } from "../../interfaces";
 import { clickedMatchOrders, clickedPlaceOrder } from "../../model";
 
+/** Кнопка Match и PlaceOrder */
 export const ActionButtons: FC<ActionButtonProps> = ({
   areOrders,
   isloading,

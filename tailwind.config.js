@@ -34,6 +34,9 @@ module.exports = {
       minHeight: {
         20.5: '20.5rem',
       },
+      margin: {
+        'half-screen-with': '50vw',
+      },
       padding: {
         0.25: '0.25rem',
         0.5: '0.5rem',
@@ -87,6 +90,9 @@ module.exports = {
       inset: {
         0.5: '0.5rem',
         'minus1.5': '-1.5rem',
+      },
+      translate: {
+        'minus50%': '-50%',
       },
       colors: {
         'background-gray': 'rgb(240, 245, 245)',

@@ -4,6 +4,7 @@ import { FC } from "react";
 import { takeTokenDecorations } from "../../lib";
 import { $maxAmountA } from "../../model";
 
+/** Элемент смэтченного ордера */
 export const MatchedOrder: FC<{ amountA: string; amountB: string }> = ({
   amountA,
   amountB,
