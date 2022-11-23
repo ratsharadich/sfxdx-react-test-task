@@ -11,7 +11,3 @@ export const eth = web3.eth;
 Contract.setProvider(web3.givenProvider);
 export const contract = new Contract(ABI, CONTRACT_ADRESS);
 export const contractMethods = contract.methods;
-
-console.log(contract, "contract");
-console.log(contractMethods, "contractMethods");
-console.log(eth, "eth");

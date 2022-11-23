@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState } from "react";
 
-import { inputClassName } from "./constants";
+import { inputClassName, INVALID_WARNING } from "./constants";
 import { InputProps } from "./interfaces";
 
 /** Стилизованный input */
@@ -30,7 +30,7 @@ export const Input: FC<InputProps> = ({
   }, [inputValidity]);
 
   return (
-    <div className="relative h-[2.75rem]">
+    <div className="relative h-2.75">
       <input
         id={id}
         type={type}
@@ -51,8 +51,8 @@ export const Input: FC<InputProps> = ({
       </label>
 
       {!isInputValid && (
-        <div className="absolute text-red-600 bottom-[-1.5rem] left-[0.5rem]">
-          Invalid input
+        <div className="absolute text-red-600 bottom-minus1.5 left-0.5">
+          {INVALID_WARNING}
         </div>
       )}
     </div>

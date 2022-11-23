@@ -18,8 +18,7 @@ export const outputClassName = (isExpectedOrderPrice: boolean) =>
       "whitespace-pre",
     ].join(" "),
     {
-      "bg-output-green text-black border-output-border-green":
-        isExpectedOrderPrice,
+      "bg-light-green text-black border-green": isExpectedOrderPrice,
     }
   );
 

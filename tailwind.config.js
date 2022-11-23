@@ -10,12 +10,20 @@ module.exports = {
       },
       width: {
         10: '10rem',
+        12.5: '12.5rem',
         17.5: '17.5rem',
+        24.75: '24.75rem',
         30: '30rem',
+        'half-screen': '50wv',
       },
       height: {
+        2.75: '2.75rem',
         3: '3rem',
         3.125: '3.125rem',
+        'half-screen': '50vh',
+      },
+      maxHeight: {
+        '85screen': '85vh',
       },
       padding: {
         0.5: '0.5rem',
@@ -23,6 +31,7 @@ module.exports = {
         1: '1rem',
         1.25: '1.25rem',
         1.5: '1.5rem',
+        1.75: '1.75rem',
         2: '2rem',
         2.25: '2.25rem',
         2.5: '2.5rem',
@@ -50,6 +59,23 @@ module.exports = {
       borderRadius: {
         0.5: '0.5rem',
       },
+      opacity: {
+        15: '.15',
+      },
+      blur: {
+        6.25: '6.25rem',
+      },
+      rotate: {
+        'minus131': '-131deg',
+        'minus65.41': '-65.41deg',
+      },
+      lineHeight: {
+        1.5: '1.5rem',
+      },
+      inset: {
+        0.5: '0.5rem',
+        'minus1.5': '-1.5rem',
+      },
       colors: {
         'background-gray': 'rgb(240, 245, 245)',
         'border-gray': 'rgb(205, 210, 221)',
@@ -58,9 +84,8 @@ module.exports = {
         'disabled-text-gray': 'rgb(148, 150, 151)',
         'overlay-gray': 'rgb(9, 35, 38);',
         gray: 'rgb(103, 103, 103)',
-        'output-green': 'rgb(178, 241, 222)',
-        'output-border-green': 'rgb(8, 216, 153)',
-        'order-green': 'rgb(178, 241, 222)',
+        'light-green': 'rgb(178, 241, 222)',
+        'elips-green': 'rgb(58, 201, 34)',
         green: 'rgb(8, 216, 153)',
       }
     }

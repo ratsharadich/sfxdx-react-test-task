@@ -13,7 +13,7 @@ export const Modal: FC<{
     <article className="fixed w-screen h-screen z-20 flex justify-center items-center">
       <section
         className={cn(
-          "bg-white max-h-[85vh] w-[24.75rem] p-[1.75rem] rounded-[0.5rem] z-30 overflow-y-scroll",
+          "bg-white max-h-85screen w-24.75 p-1.75 rounded-0.5 z-30 overflow-y-scroll",
           contentClassName
         )}
       >

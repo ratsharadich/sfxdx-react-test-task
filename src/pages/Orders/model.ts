@@ -27,9 +27,6 @@ sample({
   target: $isNetworkModalOpened,
 });
 
-$isNetworkModalOpened.watch((net) => console.log("net", net));
-$isNetworkCorrect.watch((corr) => console.log("corr", corr));
-
 sample({
   clock: OrdersPageGate.open,
   filter: $isLogin,
