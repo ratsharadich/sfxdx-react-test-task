@@ -13,5 +13,5 @@ export const buttonClassName = (active?: Boolean, className?: string) =>
       "text-lg",
       "leading-1.5",
     ].join(" "),
-    { "button-shadow bg-green text-white": active }
+    { "button-shadow bg-green !text-white": active }
   );

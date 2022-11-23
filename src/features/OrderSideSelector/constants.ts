@@ -5,7 +5,7 @@ export const commonButtonClassName = "w-9.25 h-2.25 !bg-green text-white";
 export const notSelectedButtonClassName =
   "!bg-transparent font-inter !text-gray font-bold";
 
-export const buttonClassName = (isNotActive: boolean) =>
+export const sideButtonClassName = (isNotActive: boolean) =>
   cn(commonButtonClassName, { [notSelectedButtonClassName]: isNotActive });
 
 export const transactionTypeSelectorClassName = [
@@ -19,5 +19,5 @@ export const transactionTypeSelectorClassName = [
   "rounded-0.5",
 ].join(" ");
 
-export const BUY = 'Buy'
-export const SELL = 'Sell'
+export const BUY = "Buy";
+export const SELL = "Sell";

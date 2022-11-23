@@ -5,7 +5,10 @@ const commonButtonClassName =
 
 const selectedButtonClassName = "border-b-2 border-green text-black";
 
-export const buttonClassName = (isActive: boolean) =>
+export const typeButtonClassName = (isActive: boolean) =>
   cn(commonButtonClassName, {
     [selectedButtonClassName]: isActive,
   });
+
+export const LIMIT = "Limit";
+export const MARKET = "Market";

@@ -3,7 +3,12 @@ import { FC } from "react";
 import { $isBuy, $isSell, setBuy, setSell } from "src/features";
 import { Button } from "src/shared";
 
-import { buttonClassName, BUY, SELL, transactionTypeSelectorClassName } from "./constants";
+import {
+  BUY,
+  SELL,
+  sideButtonClassName,
+  transactionTypeSelectorClassName,
+} from "./constants";
 
 /** Переключатель между Buy и Sell */
 export const TransactionTypeSelector: FC = () => {
@@ -26,14 +31,16 @@ export const TransactionTypeSelector: FC = () => {
   return (
     <div className={transactionTypeSelectorClassName}>
       <Button
-        className={buttonClassName(!isBuy)}
+        active={isBuy}
+        className={sideButtonClassName(!isBuy)}
         onClick={handleBuyButtonClick}
       >
         {BUY}
       </Button>
 
       <Button
-        className={buttonClassName(!isSell)}
+        active={isSell}
+        className={sideButtonClassName(!isSell)}
         onClick={handleSellButtonClick}
       >
         {SELL}

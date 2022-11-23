@@ -6,8 +6,8 @@ import {
   GetOrdersFnArgs,
 } from "src/shared";
 
-/** Запрашиваем заявки */
-export const getOrdersFx = createEffect<
+/** Запрашиваем смэтченные заявки */
+export const getMatchedOrdersFx = createEffect<
   GetOrdersFnArgs,
   Array<Record<string, string>>
 >(async (args) => {

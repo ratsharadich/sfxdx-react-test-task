@@ -1,5 +1,5 @@
 import { createEffect } from "effector";
-import { contractMethods } from "src/shared";
+import { contractMethods, getOrders, GetOrdersFnArgs } from "src/shared";
 
 import { CreateOrderFnArgs, MatchOrdersFnArgs } from "../interfaces";
 
@@ -39,3 +39,12 @@ export const createOrderFX = createEffect<CreateOrderFnArgs, void>(
       .catch(({ message }: { message: string }) => alert(message));
   }
 );
+
+/** Запрашиваем заявки текущего пользователя */
+export const getUserOrdersFx = createEffect<
+  GetOrdersFnArgs,
+  Array<Record<string, string>>
+>(async (args) => {
+  const result = await getOrders(args);
+  return result;
+});

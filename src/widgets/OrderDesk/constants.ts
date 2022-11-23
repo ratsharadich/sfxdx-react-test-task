@@ -21,6 +21,3 @@ export const ORDER_BOOK = 'Order Book'
 export const MY_ORDERS = 'My Orders'
 
 export const MY_ORDERS_DUMMY = 'Connect your wallet to start trading'
-
-export const LIMIT = 'Limit'
-export const MARKET = 'Market'

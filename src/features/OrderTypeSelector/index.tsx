@@ -2,8 +2,7 @@ import { useEvent, useStore } from "effector-react";
 import { FC } from "react";
 import { $isLimit, $isMarket, setLimit, setMarket } from "src/features";
 
-import { LIMIT, MARKET } from "../../widgets/OrderDesk/constants";
-import { buttonClassName } from "./constants";
+import { LIMIT, MARKET, typeButtonClassName } from "./constants";
 
 /** Переключатель между limit и market */
 export const OrderTypeSelector: FC = () => {
@@ -26,14 +25,14 @@ export const OrderTypeSelector: FC = () => {
   return (
     <div className="flex gap-1.5 font-inter font-bold text-gray">
       <button
-        className={buttonClassName(isLimit)}
+        className={typeButtonClassName(isLimit)}
         onClick={handleLimitButtonClick}
       >
         {LIMIT}
       </button>
 
       <button
-        className={buttonClassName(isMarket)}
+        className={typeButtonClassName(isMarket)}
         onClick={handleMarketButtonClick}
       >
         {MARKET}

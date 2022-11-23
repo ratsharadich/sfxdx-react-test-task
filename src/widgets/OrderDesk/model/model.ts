@@ -14,8 +14,8 @@ import {
   $tokenB,
   clickedMatchOrders,
   clickedPlaceOrder,
+  getMatchedOrdersFx,
   getMatchingOrdersFx,
-  getOrdersFx,
   OrderDetailsModalGate,
 } from "src/features";
 
@@ -36,8 +36,20 @@ sample({
     Boolean(tokenA && tokenB && tokenAAmount && priceLimit),
   fn: ({ tokenA, tokenB, isSell, expectedOrderPrice, ...rest }) => {
     /** Сторона ордера задается неявно - tokenA всегда покупается, tokenB всегда продается */
-    if (isSell) return { tokenA: tokenB, tokenB: tokenA, tokenBAmount: String(expectedOrderPrice), ...rest };
-    return { tokenA, tokenB, tokenBAmount: String(expectedOrderPrice), ...rest };
+    if (isSell) {
+      return {
+        tokenA: tokenB,
+        tokenB: tokenA,
+        tokenBAmount: String(expectedOrderPrice),
+        ...rest,
+      };
+    }
+    return {
+      tokenA,
+      tokenB,
+      tokenBAmount: String(expectedOrderPrice),
+      ...rest,
+    };
   },
   target: getMatchingOrdersFx,
 });
@@ -62,11 +74,11 @@ sample({
     }
     return { tokenA, tokenB, userId: "", active: true };
   },
-  target: getOrdersFx,
+  target: getMatchedOrdersFx,
 });
 
 sample({
-  clock: getOrdersFx.doneData,
+  clock: getMatchedOrdersFx.doneData,
   filter: $isModalOpened,
   source: $matchedOrdersIds,
   fn: (ids, orders) => {
@@ -110,9 +122,21 @@ sample({
   fn: ({ accounts, isSell, tokenA, tokenB, expectedOrderPrice, ...rest }) => {
     /** Сторона ордера задается неявно - tokenA всегда покупается, tokenB всегда продается */
     if (isSell) {
-      return { tokenA: tokenB, tokenB: tokenA, tokenBAmount: String(expectedOrderPrice), account: accounts[0], ...rest };
+      return {
+        tokenA: tokenB,
+        tokenB: tokenA,
+        tokenBAmount: String(expectedOrderPrice),
+        account: accounts[0],
+        ...rest,
+      };
     }
-    return { tokenA, tokenB, tokenBAmount: String(expectedOrderPrice), account: accounts[0], ...rest };
+    return {
+      tokenA,
+      tokenB,
+      tokenBAmount: String(expectedOrderPrice),
+      account: accounts[0],
+      ...rest,
+    };
   },
   target: createOrderFX,
 });
